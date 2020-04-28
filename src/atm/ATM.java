@@ -16,8 +16,7 @@ public class ATM {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        System.out.println("Test");
         System.out.println("ahhhhhh");
     }
-    
 }
