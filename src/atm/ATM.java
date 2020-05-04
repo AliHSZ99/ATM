@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Ali Zoubeidi
+ * @author Ali Zoubeidi, Vincent Benesen and Jeremie Guerchon
  */
 public class ATM {
 
