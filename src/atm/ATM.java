@@ -20,15 +20,15 @@ public class ATM {
     public static void main(String[] args) {
         // TODO code application logic here
         Accounts vincent = new Accounts("Vincent", "Benesen", 5000);
-        Accounts jeremie = new Accounts("Jeremie", "Guerchon", 7000);
         Accounts ali = new Accounts("Ali", "Zoubeidi", 8000);
+        AdminAccount jeremie = new AdminAccount("Jeremie", "Guerchon", 4000);
 
         DecimalFormat currency = new DecimalFormat("0.00$");
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your username > ");
         String username = sc.next();
 
-        while ((!username.equals(jeremie.getUserName()) && !username.equals(vincent.getUserName()))) {
+        while ((!username.equals(jeremie.getUser()) && !username.equals(vincent.getUserName()))) {
             System.out.println("INVALID USERNAME, Please enter your username");
             username = sc.next();
         }
@@ -36,7 +36,7 @@ public class ATM {
         System.out.println("Please enter your password > ");
         String password = sc.next();
 
-        while (!password.equals(vincent.getPassWord()) && !password.equals(jeremie.getPassWord())) {
+        while (!password.equals(vincent.getPassWord()) && !password.equals(jeremie.getPass())) {
             System.out.println("INVALID PASSWORD, Please enter your password");
             password = sc.next();
         }
@@ -75,8 +75,9 @@ public class ATM {
                 default:
                     throw new AssertionError();
             }
-        } else if (username.equals(jeremie.getUserName()) && password.equals(jeremie.getPassWord())) {
+        } else if (username.equals(jeremie.getUser()) && password.equals(jeremie.getPass())) {
             System.out.println(jeremie);
+
         }
     }
 }

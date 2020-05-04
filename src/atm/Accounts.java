@@ -7,7 +7,7 @@ package atm;
 
 /**
  *
- * @author Vincent Benesen &lt;vincebry0803@yahoo.com&gt;
+ * @author Vincent Benesen, Jeremie Guerchon, Ali Zoubeidi
  */
 public class Accounts {
     private String username;
