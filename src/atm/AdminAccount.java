@@ -31,6 +31,6 @@ public class AdminAccount {
                 +"\nPress (1) for Withdraw"
                 + "\nPress (2) for Deposit" + "\nPress (3) for Check Balance"
                 + "\nPress (4) for Transferring Money to other Account"
-                + "\nPress (5) to view all accounts registered to bank.";
+                + "\nPress (5) to view all accounts registered to bank";
     }
 }

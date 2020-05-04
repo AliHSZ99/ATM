@@ -47,7 +47,7 @@ public class ATM {
             int number = sc.nextInt();
             switch (number) {
                 case 1:
-                    System.out.println("Please enter the amount of money. you want to withdraw > ");
+                    System.out.println("Please enter the amount of money you want to withdraw > ");
                     int withdraw = sc.nextInt();
                     int balance = vincent.getMoney() - withdraw;
                     System.out.println("Here is your: " + currency.format(withdraw));
