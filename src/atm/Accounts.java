@@ -47,11 +47,24 @@ public class Accounts {
                 + "\nPress (4) for Transferring Money to other Account";
     }
 
-    public String withdrawalReceipt() {
+    public String receipt() {
         return "*******************************************"
                 + "\n *------------>>>J.A.V BANK<<<-----------*"
                 + "\n *----------Transaction  Receipt---------*"
-                + "\n*******************************************";
+                + "\n*******************************************"
+                + "\n-------------------------------------------";
+    }
+    
+    public String bankStatement(){
+        return  "\n-------------------------------------------"
+                + "\n BANK FROM HOME, THE OFFICE, OR THE ROAD,"
+                + "\n     JAV.com MAKES BANKING EASIER!       " 
+                + "\nVIEW ACCOUNT STATEMENTS & CHECK & PAY BILLS. "
+                + "\nSET THE ATM PREFERENCES. ACTIVATE PERSONALIZED "
+                + "\n        ALERTS-AT YOUR CONVENIECE "
+                + "\n" +  "\n              ENROLL TODAY!\n" 
+                + "\n       J.A.V BANK 1-800-555-3232" 
+                + "\n-------------------------------------------";            
     }
 
     @Override
