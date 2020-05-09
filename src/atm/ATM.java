@@ -21,9 +21,11 @@ public class ATM {
         // TODO code application logic here
         Accounts vincent = new Accounts("Vincent", "Benesen", 5000);
         Accounts ali = new Accounts("Ali", "Zoubeidi", 8000);
+        Accounts jeremiee = new Accounts("Jeremie", "Guerchon", 4000);
         AdminAccount jeremie = new AdminAccount("Jeremie", "Guerchon", 4000);
 
         DecimalFormat currency = new DecimalFormat("0.00$");
+        String password;
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your username > ");
         String username = sc.next();
@@ -33,51 +35,116 @@ public class ATM {
             username = sc.next();
         }
 
-        System.out.println("Please enter your password > ");
-        String password = sc.next();
-
-        while (!password.equals(vincent.getPassWord()) && !password.equals(jeremie.getPass())) {
-            System.out.println("INVALID PASSWORD, Please enter your password");
+        if (username.equals(vincent.getUserName())) {
+            System.out.println("Please enter your password > ");
             password = sc.next();
-        }
-
-        if (username.equals(vincent.getUserName()) && password.equals(vincent.getPassWord())) {
-            System.out.println(vincent);
-            System.out.println("Please enter your choice > ");
-            int number = sc.nextInt();
-            switch (number) {
-                case 1:
-                    System.out.println("Please enter the amount of money you want to withdraw > ");
-                    int withdraw = sc.nextInt();
-                    int balance = vincent.getMoney() - withdraw;
-                    System.out.println("Here is your: " + currency.format(withdraw));
-                    System.out.println("Your Current Balance is : " + currency.format(balance));
-                    break;
-                case 2:
-                    System.out.println("Please enter the amount of money you want to deposit");
-                    int deposit = sc.nextInt();
-                    vincent.setMoney((deposit + vincent.getMoney()));
-                    System.out.println("Your Current Balance is: " + currency.format(vincent.getMoney()));
-                    break;
-                case 3:
-                    System.out.println("Your Current Balance is: " + currency.format(vincent.getMoney()));
-                    break;
-                case 4:
-                    System.out.println("Please choose an account " + "\n(1) Ali" + "\n(2) Jeremie");
-                    int accountToTransfer = sc.nextInt();
-                    if (accountToTransfer == 1) {
-                        System.out.println("Please Enter the amount of money you want to transfer > ");
-                        int tranferedMoney = sc.nextInt();
-                        ali.setMoney(ali.getMoney() + tranferedMoney);
-                        vincent.setMoney(vincent.getMoney() - tranferedMoney);
-                    }
-                    break;
-                default:
-                    throw new AssertionError();
+            while (!password.equals(vincent.getPassWord())) {
+                System.out.println("Please enter your password >");
+                password = sc.next();
             }
-        } else if (username.equals(jeremie.getUser()) && password.equals(jeremie.getPass())) {
-            System.out.println(jeremie);
+            if (username.equals(vincent.getUserName()) && password.equals(vincent.getPassWord())) {
+                System.out.println("\n" + vincent);
+                String response = "yes";
+                while (response.equalsIgnoreCase("Yes")) {
 
+                    System.out.println("Please enter your choice > ");
+                    int number = sc.nextInt();
+                    switch (number) {
+                        case 1:
+                            System.out.println("Please enter the amount of money you want to withdraw > ");
+                            int withdraw = sc.nextInt();
+                            int balance = vincent.getMoney() - withdraw;
+                            System.out.println("Here is your: " + currency.format(withdraw));
+                            System.out.println("\nIs there anything else we can help you? (YES) (NO)");
+                            response = sc.next();
+                            if (response.equalsIgnoreCase("Yes")) {
+                                response = "yes";
+                                System.out.println(vincent.options());
+                            } else if (response.equalsIgnoreCase("No")) {
+                                response = "no";
+                                System.out.println("\nPRINTING YOUR RECEIPT ..." +"\n5....." + "\n4...." 
+                                                   +"\n3..." + "\n2.." + "\n1.");
+                                System.out.println(vincent.receipt()+ "\nWITHDRAWAL FROM ACCOUNT:              " +currency.format(withdraw));
+                                System.out.println("\n" + "\n" + "Available Balance:                   " + currency.format(balance));
+                                System.out.println(vincent.bankStatement());
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Please enter the amount of money you want to deposit");
+                            int deposit = sc.nextInt();
+                            vincent.setMoney((deposit + vincent.getMoney()));
+                            System.out.println("Deposit to Account: " + currency.format(deposit));
+                            System.out.println("\nIs there anything else we can help you? (YES) (NO)");
+                            response = sc.next();
+                            if (response.equalsIgnoreCase("Yes")) {
+                                response = "yes";
+                                System.out.println(vincent.options());
+                            } else if (response.equalsIgnoreCase("No")) {
+                                response = "no";
+                                System.out.println("\nPRINTING YOUR RECEIPT ..." +"\n5....." + "\n4...." 
+                                                   +"\n3..." + "\n2.." + "\n1.");
+                                System.out.println(vincent.receipt()+ "\nDEPOSIT TO ACCOUNT:              " +currency.format(deposit));
+                                System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
+                                System.out.println(vincent.bankStatement());
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Your Current Balance is: " + currency.format(vincent.getMoney()));
+                            System.out.println("Is there anything else we can help you? (YES) (NO)");
+                            response = sc.next();
+                            if (response.equalsIgnoreCase("Yes")) {
+                                response = "yes";
+                                System.out.println(vincent.options());
+                            } else if (response.equalsIgnoreCase("no")){
+                                
+                            }
+                            break;
+                        case 4:
+                            System.out.println("Please choose an account " + "\n(1) Ali" + "\n(2) Jeremie");
+                            int accountToTransfer = sc.nextInt();
+                            if (accountToTransfer == 1) {
+                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                int transferedMoney = sc.nextInt();
+                                ali.setMoney(ali.getMoney() + transferedMoney);
+                                System.out.println("You've transferred " + currency.format(transferedMoney) + " to Ali" );
+                                vincent.setMoney(vincent.getMoney() - transferedMoney);
+                                System.out.println("Is there anything else we can help you? (YES) (NO)");
+                                if (response.equalsIgnoreCase("Yes")) {
+                                response = "yes";
+                                System.out.println(vincent.options());
+                                } else if (response.equalsIgnoreCase("No")) {
+                                    response = "no";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." +"\n5....." + "\n4...." 
+                                                       +"\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(vincent.receipt()+ "\nTRANSFERED MONEY:              " +currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
+                                    System.out.println(vincent.bankStatement());
+                                }
+                            } else if (accountToTransfer == 2) {
+                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                int transferedMoney = sc.nextInt();
+                                jeremiee.setMoney(ali.getMoney() + transferedMoney);
+                                System.out.println("You've transferred " + currency.format(transferedMoney) + " to Jeremie" );
+                                vincent.setMoney(vincent.getMoney() - transferedMoney);
+                                System.out.println("Is there anything else we can help you? (YES) (NO)");
+                                if (response.equalsIgnoreCase("Yes")) {
+                                response = "yes";
+                                System.out.println(vincent.options());
+                                } else if (response.equalsIgnoreCase("No")) {
+                                    response = "no";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." +"\n5....." + "\n4...." 
+                                                       +"\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(vincent.receipt()+ "\nTRANSFERED MONEY:              " +currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
+                                    System.out.println(vincent.bankStatement());
+                                }
+                            }   
+                            break;
+                        default:
+                            System.out.println(vincent.options());
+                    }
+                }
+            }
         }
     }
 }
