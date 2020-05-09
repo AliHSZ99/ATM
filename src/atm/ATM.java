@@ -99,7 +99,7 @@ public class ATM {
                                 response = "yes";
                                 System.out.println(vincent.options());
                             } else if (response.equalsIgnoreCase("no")){
-                                
+                                System.out.println("Thank You!");
                             }
                             break;
                         case 4:
