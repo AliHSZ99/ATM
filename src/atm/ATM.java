@@ -27,7 +27,10 @@ public class ATM {
         DecimalFormat currency = new DecimalFormat("0.00$");
         String password;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter your username > ");
+        System.out.println("\n*******************************************");
+        System.out.println("*------->>>WELCOME TO J.A.V BANK<<<-------*");
+        System.out.println("*******************************************");
+        System.out.println("\nPlease enter your username > ");
         String username = sc.next();
 
         while ((!username.equals(jeremie.getUser()) && !username.equals(vincent.getUserName()))) {
@@ -109,14 +112,15 @@ public class ATM {
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Ali" );
                                 vincent.setMoney(vincent.getMoney() - transferedMoney);
                                 System.out.println("Is there anything else we can help you? (YES) (NO)");
+                                response = sc.next();
                                 if (response.equalsIgnoreCase("Yes")) {
-                                response = "yes";
-                                System.out.println(vincent.options());
+                                     response = "yes";
+                                    System.out.println(vincent.options());
                                 } else if (response.equalsIgnoreCase("No")) {
                                     response = "no";
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." +"\n5....." + "\n4...." 
                                                        +"\n3..." + "\n2.." + "\n1.");
-                                    System.out.println(vincent.receipt()+ "\nTRANSFERED MONEY:              " +currency.format(transferedMoney));
+                                    System.out.println(vincent.receipt()+ "\nTRANSFERED MONEY:                 " +currency.format(transferedMoney));
                                     System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
                                     System.out.println(vincent.bankStatement());
                                 }
@@ -127,14 +131,15 @@ public class ATM {
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Jeremie" );
                                 vincent.setMoney(vincent.getMoney() - transferedMoney);
                                 System.out.println("Is there anything else we can help you? (YES) (NO)");
+                                response = sc.next();
                                 if (response.equalsIgnoreCase("Yes")) {
-                                response = "yes";
-                                System.out.println(vincent.options());
+                                    response = "yes";
+                                    System.out.println(vincent.options());
                                 } else if (response.equalsIgnoreCase("No")) {
                                     response = "no";
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." +"\n5....." + "\n4...." 
                                                        +"\n3..." + "\n2.." + "\n1.");
-                                    System.out.println(vincent.receipt()+ "\nTRANSFERED MONEY:              " +currency.format(transferedMoney));
+                                    System.out.println(vincent.receipt()+ "\nTRANSFERED MONEY:                 " +currency.format(transferedMoney));
                                     System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
                                     System.out.println(vincent.bankStatement());
                                 }
