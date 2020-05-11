@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -152,64 +153,64 @@ public class ATM {
                 }
             }
         }
-            File ft = new File("C:\\Users\\Airi\\IdeaProjects\\ATM\\src\\atm\\users.txt");
-            Scanner list = new Scanner(ft);
-            File file = new File("C:\\Users\\Airi\\IdeaProjects\\ATM\\src\\atm\\machine.txt");
-            Scanner hardware = new Scanner(file);
+        File ft = new File("users.txt");
+        Scanner list = new Scanner(ft);
+        File file = new File("machine.txt");
+        Scanner hardware = new Scanner(file);
 
-            //Here are the sets of accounts
-            String userOne = list.nextLine();
-            String userTwo = list.nextLine();
-            String userThree = list.nextLine();
+        //Here are the sets of accounts
+        String userOne = list.nextLine();
+        String userTwo = list.nextLine();
+        String userThree = list.nextLine();
 
-            //Here are the sets of hardware info
-            String h1 = hardware.nextLine();
-            String h2 = hardware.nextLine();
-            String h3 = hardware.nextLine();
-            String h4 = hardware.nextLine();
+        //Here are the sets of hardware info
+        String h1 = hardware.nextLine();
+        String h2 = hardware.nextLine();
+        String h3 = hardware.nextLine();
+        String h4 = hardware.nextLine();
 
 
 
         String newPass = null;
-            if (username.equals(jeremie.getUser())) {
-                System.out.println("\n[_[-=ADMINISTRATIVE ACCOUNT .JAV 2.0491=-]_]");
-                System.out.println("Welcome back Jeremie~ please enter your password");
-                newPass = sc.next();
-            }
+        if (username.equals(jeremie.getUser())) {
+            System.out.println("\n[_[-=ADMINISTRATIVE ACCOUNT .JAV 2.0491=-]_]");
+            System.out.println("Welcome back Jeremie~ please enter your password");
+            newPass = sc.next();
+        }
 
-            while (!newPass.equals(jeremie.getPass())) {
-                System.out.println("WRONG PASSWORD ENTER AGAIN");
-                newPass = sc.next();
-            }
+        while (!newPass.equals(jeremie.getPass())) {
+            System.out.println("WRONG PASSWORD ENTER AGAIN");
+            newPass = sc.next();
+        }
 
-            if (username.equals(jeremie.getUser()) && newPass.equals(jeremie.getPass())) {
-                String answer = "Yes";
-                while (answer.equalsIgnoreCase("yes")) {
-                    System.out.println(jeremie);
-                    System.out.println("Those are your account's permissions, select >>");
-                     int number = sc.nextInt();
-                     switch (number) {
-                         case 1:
-                             System.out.println("\n.::Here are the following accounts::.");
-                             System.out.println(userOne);
-                             System.out.println(userTwo);
-                             System.out.println(userThree);
-                             System.out.println("\n.::Say yes or no respectively to either go back or terminate this session::.");
-                             answer = sc.next();
-                             break;
-                         case 2:
-                             System.out.println(h1);
-                             System.out.println(h2);
-                             System.out.println(h3);
-                             System.out.println(h4);
-                             System.out.println("\n.::Say yes or no respectively to either go back or terminate this session::.");
-                             answer = sc.next();
-                             break;
-                         default:
+        if (username.equals(jeremie.getUser()) && newPass.equals(jeremie.getPass())) {
+            String answer = "Yes";
+            while (answer.equalsIgnoreCase("yes")) {
+                System.out.println(jeremie);
+                System.out.println("Those are your account's selection permissions, select >>");
+                int number = sc.nextInt();
+                switch (number) {
+                    case 1:
+                        System.out.println("\n.::Here are the following accounts::.");
+                        System.out.println(userOne);
+                        System.out.println(userTwo);
+                        System.out.println(userThree);
+                        System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                        answer = sc.next();
+                        break;
+                    case 2:
+                        System.out.println(h1);
+                        System.out.println(h2);
+                        System.out.println(h3);
+                        System.out.println(h4);
+                        System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                        answer = sc.next();
+                        break;
+                    default:
 
-                     }
-                        System.out.println("Goodbye.");
                 }
+                System.out.println("Goodbye.");
             }
+        }
     }
 }
