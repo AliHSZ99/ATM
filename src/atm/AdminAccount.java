@@ -5,10 +5,10 @@ public class AdminAccount {
     String pass;
     int bal;
 
-    public AdminAccount(String newUser, String newPass, int newBal) {
-        this.user = newUser;
-        this.pass = newPass;
-        this.bal = newBal;
+    public AdminAccount(String User, String Pass, int Bal) {
+        this.user = User;
+        this.pass = Pass;
+        this.bal = Bal;
     }
 
     public String getUser(){
@@ -26,11 +26,11 @@ public class AdminAccount {
     @Override
     public String toString(){
         return "-------------------------------------"
-                + "\n****WELCOME TO YOUR BANK ACCOUNT****"
-                + "\nPlease choose for the following options "
-                +"\nPress (1) for Withdraw"
-                + "\nPress (2) for Deposit" + "\nPress (3) for Check Balance"
-                + "\nPress (4) for Transferring Money to other Account"
-                + "\nPress (5) to view all accounts registered to bank";
+                + "\n****ADMIN CONTROLS****"
+                + "\nPress (1) to view all accounts registered to bank"
+                + "\nPress (2) for specifics about the machine";
+    }
+
+    public void setMoney(int i) {
     }
 }

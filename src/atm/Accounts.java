@@ -61,7 +61,7 @@ public class Accounts {
                 + "\n     JAV.com MAKES BANKING EASIER!       " 
                 + "\nVIEW ACCOUNT STATEMENTS & CHECK & PAY BILLS. "
                 + "\nSET THE ATM PREFERENCES. ACTIVATE PERSONALIZED "
-                + "\n        ALERTS-AT YOUR CONVENIECE "
+                + "\n        ALERTS-AT YOUR CONVENIENCE "
                 + "\n" +  "\n              ENROLL TODAY!\n" 
                 + "\n       J.A.V BANK 1-800-555-3232" 
                 + "\n-------------------------------------------";            
