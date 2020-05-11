@@ -1,9 +1,3 @@
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package atm;
 
 import java.text.DecimalFormat;
@@ -11,6 +5,12 @@ import java.util.*;
 import java.io.*;
 
 /**
+ * This is a program about an ATM machine that contains 3 accounts. It is an ATM
+ * machine simulator.We created an Account class with all the attributes that
+ * characterizes a bank account, with all the methods needed, and other service
+ * classes such as MoneyConversion class and AdminAccount class. We provided
+ * operations such as deposit, withdraw, transfer between accounts, print
+ * balance and more with nice outputs for better user experience.
  *
  * @author Ali Zoubeidi, Vincent Benesen and Jeremie Guerchon
  */
@@ -25,7 +25,6 @@ public class ATM {
         Accounts ali = new Accounts("Ali", "Zoubeidi", 8000);
         Accounts jeremie = new Accounts("Jeremie", "Guerchon", 4000);
         AdminAccount admin = new AdminAccount("admin", "password", 9999);
-
 
         File ft = new File("users.txt");
         Scanner list = new Scanner(ft);
@@ -179,11 +178,11 @@ public class ATM {
                                     System.out.println("****Converting From Canadian To US Dollars****");
                                     System.out.println("Please enter the amount of money you want to convert > ");
                                     amount = sc.nextInt();
-                                    MoneyConversion USD= new MoneyConversion ("cad", amount, "usd");
+                                    MoneyConversion USD = new MoneyConversion("cad", amount, "usd");
                                     System.out.println("----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:    1 Canadian Dollar = 0.71 United States Dollar");
-                                    System.out.println("CONVERSION:                                             " +currency.format(USD.toUsd()));
+                                    System.out.println("CONVERSION:                                             " + currency.format(USD.toUsd()));
                                     System.out.println("Is there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
@@ -197,7 +196,7 @@ public class ATM {
                                     System.out.println("****Converting From Canadian To Euros****");
                                     System.out.println("Please enter the amount of money you want to convert > ");
                                     amount = sc.nextInt();
-                                    MoneyConversion EUR= new MoneyConversion ("cad", amount, "usd");
+                                    MoneyConversion EUR = new MoneyConversion("cad", amount, "usd");
                                     System.out.println("----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:                    1 Canadian Dollar = 0.65 Euro");
@@ -343,11 +342,11 @@ public class ATM {
                                     System.out.println("****Converting From Canadian To US Dollars****");
                                     System.out.println("Please enter the amount of money you want to convert > ");
                                     amount = sc.nextInt();
-                                    MoneyConversion USD= new MoneyConversion ("cad", amount, "usd");
+                                    MoneyConversion USD = new MoneyConversion("cad", amount, "usd");
                                     System.out.println("----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:    1 Canadian Dollar = 0.71 United States Dollar");
-                                    System.out.println("CONVERSION:                                             " +currency.format(USD.toUsd()));
+                                    System.out.println("CONVERSION:                                             " + currency.format(USD.toUsd()));
                                     System.out.println("Is there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
@@ -361,7 +360,7 @@ public class ATM {
                                     System.out.println("****Converting From Canadian To Euros****");
                                     System.out.println("Please enter the amount of money you want to convert > ");
                                     amount = sc.nextInt();
-                                    MoneyConversion EUR= new MoneyConversion ("cad", amount, "usd");
+                                    MoneyConversion EUR = new MoneyConversion("cad", amount, "usd");
                                     System.out.println("----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:                    1 Canadian Dollar = 0.65 Euro");
@@ -393,36 +392,71 @@ public class ATM {
             System.out.println("Welcome back Jeremie~ please enter your password");
             newPass = sc.next();
             while (!newPass.equals(admin.getPass())) {
-            System.out.println("WRONG PASSWORD ENTER AGAIN");
-            newPass = sc.next();
-        }
+                System.out.println("WRONG PASSWORD ENTER AGAIN");
+                newPass = sc.next();
+            }
             if (username.equals(admin.getUser()) && newPass.equals(admin.getPass())) {
-                String answer = "Yes";
-                while (answer.equalsIgnoreCase("yes")) {
-                    System.out.println(admin);
-                    System.out.println("Those are your account's selection permissions, select >>");
-                    int number = sc.nextInt();
-                    switch (number) {
-                        case 1:
-                            System.out.println("\n.::Here are the following accounts::.");
-                            System.out.println(userOne);
-                            System.out.println(userTwo);
-                            System.out.println(userThree);
-                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
-                            answer = sc.next();
-                            break;
-                        case 2:
-                            System.out.println(h1);
-                            System.out.println(h2);
-                            System.out.println(h3);
-                            System.out.println(h4);
-                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
-                            answer = sc.next();
-                            break;
-                        default:
+                while (!newPass.equals(admin.getPass())) {
+                    System.out.println("WRONG PASSWORD ENTER AGAIN");
+                    newPass = sc.next();
+                }
+                if (username.equals(admin.getUser()) && newPass.equals(admin.getPass())) {
+                    String answer = "Yes";
+                    while (answer.equalsIgnoreCase("yes")) {
+                        System.out.println(admin);
+                        System.out.println("Those are your account's selection permissions, select >>");
+                        int number = sc.nextInt();
+                        switch (number) {
+                            case 1:
+                                System.out.println("\n.::Here are the following accounts::.");
+                                System.out.println(userOne);
+                                System.out.println(userTwo);
+                                System.out.println(userThree);
+                                System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                answer = sc.next();
+                                break;
+                            case 2:
+                                System.out.println(h1);
+                                System.out.println(h2);
+                                System.out.println(h3);
+                                System.out.println(h4);
+                                System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                answer = sc.next();
+                                break;
+                            default:
+                                System.out.println("WRONG PASSWORD ENTER AGAIN");
+                                newPass = sc.next();
+                        }
+                        if (username.equals(admin.getUser()) && newPass.equals(admin.getPass())) {
+                            answer = "Yes";
+                            while (answer.equalsIgnoreCase("yes")) {
+                                System.out.println(admin);
+                                System.out.println("Those are your account's selection permissions, select >>");
+                                number = sc.nextInt();
+                                switch (number) {
+                                    case 1:
+                                        System.out.println("\n.::Here are the following accounts::.");
+                                        System.out.println(userOne);
+                                        System.out.println(userTwo);
+                                        System.out.println(userThree);
+                                        System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                        answer = sc.next();
+                                        break;
+                                    case 2:
+                                        System.out.println(h1);
+                                        System.out.println(h2);
+                                        System.out.println(h3);
+                                        System.out.println(h4);
+                                        System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                        answer = sc.next();
+                                        break;
+                                    default:
 
+                                }
+                                System.out.println("Goodbye.");
+                            }
+                        }
                     }
-                    System.out.println("Goodbye.");
                 }
             }
         }
