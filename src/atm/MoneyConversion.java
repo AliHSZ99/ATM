@@ -1,6 +1,8 @@
 package atm;
 
 /**
+ * A class to perform money conversions in ATM client class. We will be able to
+ * convert from CAN to EUR AND CAN to USD.
  *
  * @author Ali Zoubeidi
  */
