@@ -23,8 +23,10 @@ public class ATM {
         // TODO code application logic here
         Accounts vincent = new Accounts("Vincent", "Benesen", 5000);
         Accounts ali = new Accounts("Ali", "Zoubeidi", 8000);
-        AdminAccount jeremie = new AdminAccount("Jeremie", "Guerchon", 4000);
-        
+        Accounts jeremie = new Accounts("Jeremie", "Guerchon", 4000);
+        AdminAccount admin = new AdminAccount("admin", "password", 9999);
+
+
         File ft = new File("users.txt");
         Scanner list = new Scanner(ft);
         File file = new File("machine.txt");
@@ -53,7 +55,7 @@ public class ATM {
         System.out.println("\nPlease enter your username > ");
         String username = sc.next();
 
-        while (!username.equals(vincent.getUserName()) && !username.equals(jeremie.getUser()) && !username.equals(ali.getUserName())) {
+        while (!username.equals(vincent.getUserName()) && !username.equals(admin.getUser()) && !username.equals(ali.getUserName())) {
             System.out.println("INVALID USERNAME, Please enter your username");
             username = sc.next();
         }
@@ -386,18 +388,18 @@ public class ATM {
                     }
                 }
             }
-        } else if (username.equals(jeremie.getUser())) {
+        } else if (username.equals(admin.getUser())) {
             System.out.println("\n[_[-=ADMINISTRATIVE ACCOUNT .JAV 2.0491=-]_]");
             System.out.println("Welcome back Jeremie~ please enter your password");
             newPass = sc.next();
-            while (!newPass.equals(jeremie.getPass())) {
+            while (!newPass.equals(admin.getPass())) {
             System.out.println("WRONG PASSWORD ENTER AGAIN");
             newPass = sc.next();
         }
-            if (username.equals(jeremie.getUser()) && newPass.equals(jeremie.getPass())) {
+            if (username.equals(admin.getUser()) && newPass.equals(admin.getPass())) {
                 String answer = "Yes";
                 while (answer.equalsIgnoreCase("yes")) {
-                    System.out.println(jeremie);
+                    System.out.println(admin);
                     System.out.println("Those are your account's selection permissions, select >>");
                     int number = sc.nextInt();
                     switch (number) {
