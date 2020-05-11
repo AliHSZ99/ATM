@@ -6,6 +6,8 @@
 package atm;
 
 /**
+ * A class that creates the accounts to run in the ATM client class. It also
+ * provides nice output for user experience.
  *
  * @author Vincent Benesen, Jeremie Guerchon, Ali Zoubeidi
  */
@@ -56,18 +58,23 @@ public class Accounts {
                 + "\n-------------------------------------------";
     }
     
-    public String bankStatement(){
-        return  "\n-------------------------------------------"
+    
+    public String bankStatement() {
+        return "\n-------------------------------------------"
                 + "\n BANK FROM HOME, THE OFFICE, OR THE ROAD,"
-                + "\n     JAV.com MAKES BANKING EASIER!       " 
+                + "\n     JAV.com MAKES BANKING EASIER!       "
                 + "\nVIEW ACCOUNT STATEMENTS & CHECK & PAY BILLS. "
                 + "\nSET THE ATM PREFERENCES. ACTIVATE PERSONALIZED "
                 + "\n        ALERTS-AT YOUR CONVENIENCE "
-                + "\n" +  "\n              ENROLL TODAY!\n" 
-                + "\n       J.A.V BANK 1-800-555-3232" 
-                + "\n-------------------------------------------";            
+                + "\n" + "\n              ENROLL TODAY!\n"
+                + "\n       J.A.V BANK 1-800-555-3232"
+                + "\n-------------------------------------------";
     }
 
+    /**
+     * 
+     * @return 
+     */
     @Override
     public String toString() {
         return "-------------------------------------"
@@ -77,6 +84,24 @@ public class Accounts {
                 + "\nPress (2) for Deposit" + "\nPress (3) for Check Balance"
                 + "\nPress (4) for Transferring Money to other Account"
                 + "\nPress (5) for Currency conversion";
+    }
+    
+    /**
+     * 
+     * @param o
+     * @return 
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Accounts)) {
+            return false;
+        } else {
+            Accounts objAcc = (Accounts) o;
+            if (username.equals(objAcc.username) && 
+                    password.equals(objAcc.password)) {
+                return true;
+            } else return false;
+        }
     }
 
 }
