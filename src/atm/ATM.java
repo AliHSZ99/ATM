@@ -61,19 +61,19 @@ public class ATM {
         System.out.println("\n*******************************************");
         System.out.println("*------->>>WELCOME TO J.A.V BANK<<<-------*");
         System.out.println("*******************************************");
-        System.out.println("\nPlease enter your username > ");
+        System.out.print("\nPlease enter your username > ");
         String username = sc.next();
 
         while (!username.equals(vincent.getUserName()) && !username.equals(admin.getUser()) && !username.equals(ali.getUserName()) && !username.equals(jeremie.getUserName())) {
-            System.out.println("INVALID USERNAME, Please enter your username");
+            System.out.print("INVALID USERNAME, Please enter your username");
             username = sc.next();
         }
 
         if (username.equals(vincent.getUserName())) {
-            System.out.println("Please enter your password > ");
+            System.out.print("Please enter your password > ");
             password = sc.next();
             while (!password.equals(vincent.getPassWord())) {
-                System.out.println("Please enter your password >");
+                System.out.print("Please enter your password >");
                 password = sc.next();
             }
             if (username.equals(vincent.getUserName()) && password.equals(vincent.getPassWord())) {
@@ -82,6 +82,11 @@ public class ATM {
                 while (response.equalsIgnoreCase("Yes")) {
 
                     System.out.print("Please enter your choice > ");
+                    while (!sc.hasNextInt()) {
+                        sc.next();
+                        System.out.println("\n" + vincent);
+                        System.out.print("Please enter your choice > ");
+                    }
                     int number = sc.nextInt();
                     switch (number) {
                         case 1:
@@ -259,7 +264,7 @@ public class ATM {
                             }
                             break;
                         case 4:
-                            System.out.println("Please choose an account " + "\n(1) Ali" + "\n(2) Jeremie");
+                            System.out.println("\nPlease choose an account " + "\n(1) Ali" + "\n(2) Jeremie");
                             int accountToTransfer = sc.nextInt();
                             while (accountToTransfer != 1 && accountToTransfer != 2) {
                                 System.out.println("Please choose from the following choices");
@@ -267,7 +272,7 @@ public class ATM {
                                 accountToTransfer = sc.nextInt();
                             }
                             if (accountToTransfer == 1) {
-                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                System.out.print("Please Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
                                     sc.next();
                                     System.out.print("Please Enter a valid amount > ");
@@ -290,7 +295,7 @@ public class ATM {
                                     System.out.println(vincent.bankStatement());
                                 }
                             } else if (accountToTransfer == 2) {
-                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                System.out.print("Please Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
                                     sc.next();
                                     System.out.print("Please Enter a valid amount > ");
@@ -315,55 +320,73 @@ public class ATM {
                             }
                             break;
                         case 5:
-                            System.out.println("----Money Conversion----");
+                            System.out.println("\n----Money Conversion----");
                             System.out.println("PLease choose for the following options: ");
                             System.out.println("(1) Convert money to US Dollars");
                             System.out.println("(2) Convert money to Euros");
-                            System.out.println("\nPlease enter your choice");
+                            System.out.print("\nPlease enter your choice > ");
+                            while (!sc.hasNextInt()) {
+                                sc.next();
+                                System.out.println("PLease choose for the following options: ");
+                                System.out.println("(1) Convert money to US Dollars");
+                                System.out.println("(2) Convert money to Euros");
+                                System.out.print("\nPlease enter your choice > ");
+                            }
                             int choice = sc.nextInt();
+                            while (choice != 1 && choice != 2) {
+                                System.out.println("PLease choose for the following options: ");
+                                System.out.println("(1) Convert money to US Dollars");
+                                System.out.println("(2) Convert money to Euros");
+                                System.out.print("\nPlease enter your choice > ");
+                                choice = sc.nextInt();
+                            }
                             switch (choice) {
                                 case 1:
-                                    System.out.println("****Converting From Canadian To US Dollars****");
-                                    System.out.println("Please enter the amount of money you want to convert > ");
+                                    System.out.println("\n****Converting From Canadian To US Dollars****");
+                                    System.out.print("Please enter the amount of money you want to convert > ");
+                                    while (!sc.hasNextInt()) {
+                                        sc.next();
+                                        System.out.print("Please enter a valid amount > ");
+                                    }
                                     amount = sc.nextInt();
                                     MoneyConversion USD = new MoneyConversion("cad", amount, "usd");
-                                    System.out.println("----Money Conversion----");
+                                    System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:    1 Canadian Dollar = 0.71 United States Dollar");
                                     System.out.println("CONVERSION:                                             " + currency.format(USD.toUsd()));
-                                    System.out.println("Is there anything we can help you with? (YES) (NO)");
+                                    System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
                                         response = "yes";
                                         System.out.println(vincent.options());
                                     } else if (response.equalsIgnoreCase("No")) {
                                         response = "no";
+                                        System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
                                 case 2:
-                                    System.out.println("****Converting From Canadian To Euros****");
-                                    System.out.println("Please enter the amount of money you want to convert > ");
+                                    System.out.println("\n****Converting From Canadian To Euros****");
+                                    System.out.print("Please enter the amount of money you want to convert > ");
+                                    while (!sc.hasNextInt()) {
+                                        sc.next();
+                                        System.out.print("Please enter a valid amount > ");
+                                    }
                                     amount = sc.nextInt();
                                     MoneyConversion EUR = new MoneyConversion("cad", amount, "usd");
-                                    System.out.println("----Money Conversion----");
+                                    System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:                    1 Canadian Dollar = 0.65 Euro");
                                     System.out.println("CONVERSION:                                             " + currency.format(EUR.toEur()));
-                                    System.out.println("Is there anything we can help you with? (YES) (NO)");
+                                    System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
                                         response = "yes";
                                         System.out.println(vincent.options());
                                     } else if (response.equalsIgnoreCase("No")) {
                                         response = "no";
+                                        System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
-                                default:
-                                    System.out.println("PLease choose for the following options: ");
-                                    System.out.println("(1) Convert money to US Dollars");
-                                    System.out.println("(2) Convert money to Euros");
-                                    System.out.println("\nPlease enter your choice");
-                                    choice = sc.nextInt();
                             }
                             break;
                         default:
@@ -372,10 +395,10 @@ public class ATM {
                 }
             }
         } else if (username.equals(ali.getUserName())) {
-            System.out.println("Please enter your password > ");
+            System.out.print("Please enter your password > ");
             password = sc.next();
             while (!password.equals(ali.getPassWord())) {
-                System.out.println("Please enter your password >");
+                System.out.print("Please enter your password >");
                 password = sc.next();
             }
             if (username.equals(ali.getUserName()) && password.equals(ali.getPassWord())) {
@@ -384,6 +407,11 @@ public class ATM {
                 while (response.equalsIgnoreCase("Yes")) {
 
                     System.out.print("Please enter your choice > ");
+                    while (!sc.hasNextInt()) {
+                        sc.next();
+                        System.out.println("\n" + ali);
+                        System.out.print("Please enter your choice > ");
+                    }
                     int number = sc.nextInt();
                     switch (number) {
                         case 1:
@@ -525,7 +553,7 @@ public class ATM {
                             }
                             break;
                         case 2:
-                            System.out.println("Please enter the amount of money you want to deposit");
+                            System.out.print("Please enter the amount of money you want to deposit > ");
                             while (!sc.hasNextInt()) {
                                 sc.next();
                                 System.out.print("Please enter a valid amount > ");
@@ -559,7 +587,7 @@ public class ATM {
                             }
                             break;
                         case 4:
-                            System.out.println("Please choose an account " + "\n(1) Vincent" + "\n(2) Jeremie");
+                            System.out.println("\nPlease choose an account " + "\n(1) Vincent" + "\n(2) Jeremie");
                             int accountToTransfer = sc.nextInt();
                             while (accountToTransfer != 1 && accountToTransfer != 2) {
                                 System.out.println("Please choose from the following choices");
@@ -568,7 +596,7 @@ public class ATM {
                             }
 
                             if (accountToTransfer == 1) {
-                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                System.out.print("Please Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
                                     sc.next();
                                     System.out.print("Please Enter a valid amount > ");
@@ -591,7 +619,7 @@ public class ATM {
                                     System.out.println(ali.bankStatement());
                                 }
                             } else if (accountToTransfer == 2) {
-                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                System.out.print("Please Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
                                     sc.next();
                                     System.out.print("Please Enter a valid amount > ");
@@ -616,47 +644,71 @@ public class ATM {
                             }
                             break;
                         case 5:
-                            System.out.println("----Money Conversion----");
+                            System.out.println("\n----Money Conversion----");
                             System.out.println("PLease choose for the following options: ");
                             System.out.println("(1) Convert money to US Dollars");
                             System.out.println("(2) Convert money to Euros");
-                            System.out.println("\nPlease enter your choice");
+                            System.out.print("\nPlease enter your choice > ");
+                            while (!sc.hasNextInt()) {
+                                sc.next();
+                                System.out.println("PLease choose for the following options: ");
+                                System.out.println("(1) Convert money to US Dollars");
+                                System.out.println("(2) Convert money to Euros");
+                                System.out.print("\nPlease enter your choice > ");
+                            }
                             int choice = sc.nextInt();
+                            while (choice != 1 && choice != 2) {
+                                System.out.println("PLease choose for the following options: ");
+                                System.out.println("(1) Convert money to US Dollars");
+                                System.out.println("(2) Convert money to Euros");
+                                System.out.print("\nPlease enter your choice > ");
+                                choice = sc.nextInt();
+                            }
                             switch (choice) {
                                 case 1:
-                                    System.out.println("****Converting From Canadian To US Dollars****");
-                                    System.out.println("Please enter the amount of money you want to convert > ");
+                                    System.out.println("\n****Converting From Canadian To US Dollars****");
+                                    System.out.print("Please enter the amount of money you want to convert > ");
+                                    while (!sc.hasNextInt()) {
+                                        sc.next();
+                                        System.out.print("Please enter a valid amount > ");
+                                    }
                                     amount = sc.nextInt();
                                     MoneyConversion USD = new MoneyConversion("cad", amount, "usd");
-                                    System.out.println("----Money Conversion----");
+                                    System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:    1 Canadian Dollar = 0.71 United States Dollar");
                                     System.out.println("CONVERSION:                                             " + currency.format(USD.toUsd()));
-                                    System.out.println("Is there anything we can help you with? (YES) (NO)");
+                                    System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
                                         response = "yes";
                                         System.out.println(ali.options());
                                     } else if (response.equalsIgnoreCase("No")) {
                                         response = "no";
+                                        System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
                                 case 2:
-                                    System.out.println("****Converting From Canadian To Euros****");
-                                    System.out.println("Please enter the amount of money you want to convert > ");
+                                    System.out.println("\n****Converting From Canadian To Euros****");
+                                    System.out.print("Please enter the amount of money you want to convert > ");
+                                    while (!sc.hasNextInt()) {
+                                        sc.next();
+                                        System.out.print("Please enter a valid amount > ");
+                                    }
                                     amount = sc.nextInt();
                                     MoneyConversion EUR = new MoneyConversion("cad", amount, "usd");
-                                    System.out.println("----Money Conversion----");
+                                    System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:                    1 Canadian Dollar = 0.65 Euro");
                                     System.out.println("CONVERSION:                                             " + currency.format(EUR.toEur()));
-                                    System.out.println("Is there anything we can help you with? (YES) (NO)");
+                                    System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
                                         response = "yes";
                                         System.out.println(ali.options());
                                     } else if (response.equalsIgnoreCase("No")) {
                                         response = "no";
+                                        System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
                                 default:
@@ -673,10 +725,10 @@ public class ATM {
                 }
             }
         } else if (username.equals(jeremie.getUserName())) {
-            System.out.println("Please enter your password > ");
+            System.out.print("Please enter your password > ");
             password = sc.next();
             while (!password.equals(jeremie.getPassWord())) {
-                System.out.println("Please enter your password >");
+                System.out.print("Please enter your password >");
                 password = sc.next();
             }
             if (username.equals(jeremie.getUserName()) && password.equals(jeremie.getPassWord())) {
@@ -685,6 +737,11 @@ public class ATM {
                 while (response.equalsIgnoreCase("Yes")) {
 
                     System.out.print("Please enter your choice > ");
+                    while (!sc.hasNextInt()) {
+                        sc.next();
+                        System.out.println("\n" + jeremie);
+                        System.out.print("Please enter your choice > ");
+                    }
                     int number = sc.nextInt();
                     switch (number) {
                         case 1:
@@ -826,7 +883,7 @@ public class ATM {
                             }
                             break;
                         case 2:
-                            System.out.println("Please enter the amount of money you want to deposit");
+                            System.out.print("Please enter the amount of money you want to deposit > ");
                             while (!sc.hasNextInt()) {
                                 sc.next();
                                 System.out.print("Please enter a valid amount > ");
@@ -861,7 +918,7 @@ public class ATM {
                             }
                             break;
                         case 4:
-                            System.out.println("Please choose an account " + "\n(1) Vincent" + "\n(2) Ali");
+                            System.out.println("\nPlease choose an account " + "\n(1) Vincent" + "\n(2) Ali");
                             int accountToTransfer = sc.nextInt();
                             while (accountToTransfer != 1 && accountToTransfer != 2) {
                                 System.out.println("Please choose from the following choices");
@@ -869,7 +926,7 @@ public class ATM {
                                 accountToTransfer = sc.nextInt();
                             }
                             if (accountToTransfer == 1) {
-                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                System.out.print("Please Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
                                     sc.next();
                                     System.out.print("Please Enter a valid amount > ");
@@ -892,7 +949,7 @@ public class ATM {
                                     System.out.println(jeremie.bankStatement());
                                 }
                             } else if (accountToTransfer == 2) {
-                                System.out.println("Please Enter the amount of money you want to transfer > ");
+                                System.out.print("Please Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
                                     sc.next();
                                     System.out.print("Please Enter a valid amount > ");
@@ -917,47 +974,71 @@ public class ATM {
                             }
                             break;
                         case 5:
-                            System.out.println("----Money Conversion----");
+                            System.out.println("\n----Money Conversion----");
                             System.out.println("PLease choose for the following options: ");
                             System.out.println("(1) Convert money to US Dollars");
                             System.out.println("(2) Convert money to Euros");
-                            System.out.println("\nPlease enter your choice");
+                            System.out.print("\nPlease enter your choice > ");
+                            while (!sc.hasNextInt()) {
+                                sc.next();
+                                System.out.println("PLease choose for the following options: ");
+                                System.out.println("(1) Convert money to US Dollars");
+                                System.out.println("(2) Convert money to Euros");
+                                System.out.print("\nPlease enter your choice > ");
+                            }
                             int choice = sc.nextInt();
+                            while (choice != 1 && choice != 2) {
+                                System.out.println("PLease choose for the following options: ");
+                                System.out.println("(1) Convert money to US Dollars");
+                                System.out.println("(2) Convert money to Euros");
+                                System.out.print("\nPlease enter your choice > ");
+                                choice = sc.nextInt();
+                            }
                             switch (choice) {
                                 case 1:
-                                    System.out.println("****Converting From Canadian To US Dollars****");
+                                    System.out.println("\n****Converting From Canadian To US Dollars****");
                                     System.out.println("Please enter the amount of money you want to convert > ");
+                                    while (!sc.hasNextInt()) {
+                                        sc.next();
+                                        System.out.print("Please enter a valid amount > ");
+                                    }
                                     amount = sc.nextInt();
                                     MoneyConversion USD = new MoneyConversion("cad", amount, "usd");
-                                    System.out.println("----Money Conversion----");
+                                    System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:    1 Canadian Dollar = 0.71 United States Dollar");
                                     System.out.println("CONVERSION:                                             " + currency.format(USD.toUsd()));
-                                    System.out.println("Is there anything we can help you with? (YES) (NO)");
+                                    System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
                                         response = "yes";
                                         System.out.println(jeremie.options());
                                     } else if (response.equalsIgnoreCase("No")) {
                                         response = "no";
+                                        System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
                                 case 2:
-                                    System.out.println("****Converting From Canadian To Euros****");
-                                    System.out.println("Please enter the amount of money you want to convert > ");
+                                    System.out.println("\n****Converting From Canadian To Euros****");
+                                    System.out.print("Please enter the amount of money you want to convert > ");
+                                    while (!sc.hasNextInt()) {
+                                        sc.next();
+                                        System.out.print("Please enter a valid amount > ");
+                                    }
                                     amount = sc.nextInt();
                                     MoneyConversion EUR = new MoneyConversion("cad", amount, "usd");
-                                    System.out.println("----Money Conversion----");
+                                    System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:                    1 Canadian Dollar = 0.65 Euro");
                                     System.out.println("CONVERSION:                                             " + currency.format(EUR.toEur()));
-                                    System.out.println("Is there anything we can help you with? (YES) (NO)");
+                                    System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
                                     if (response.equalsIgnoreCase("Yes")) {
                                         response = "yes";
                                         System.out.println(jeremie.options());
                                     } else if (response.equalsIgnoreCase("No")) {
                                         response = "no";
+                                        System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
                                 default:
@@ -1045,7 +1126,7 @@ public class ATM {
 
                                         if (word.equalsIgnoreCase("remove")) {
                                             System.out.println("Please enter the amount you wish to remove from the account");
-                                            while(!sc.hasNextInt()) {
+                                            while (!sc.hasNextInt()) {
                                                 System.out.println("Please enter an INTEGER and not a string.");
                                                 sc.next();
                                             }
@@ -1060,7 +1141,8 @@ public class ATM {
                                             }
                                         }
                                         break;
-                                    case 2: System.out.println(".::You've selected Jeremie's account::.");
+                                    case 2:
+                                        System.out.println(".::You've selected Jeremie's account::.");
                                         System.out.println("The standing of the account's loyality is: BAD");
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
                                         word = sc.next();
@@ -1083,7 +1165,7 @@ public class ATM {
 
                                         if (word.equalsIgnoreCase("remove")) {
                                             System.out.println("Please enter the amount you wish to remove from the account");
-                                            while(!sc.hasNextInt()) {
+                                            while (!sc.hasNextInt()) {
                                                 System.out.println("Please enter an INTEGER and not a string.");
                                                 sc.next();
                                             }
@@ -1098,7 +1180,8 @@ public class ATM {
                                             }
                                         }
                                         break;
-                                    case 3: System.out.println(".::You've selected Vincent's account::.");
+                                    case 3:
+                                        System.out.println(".::You've selected Vincent's account::.");
                                         System.out.println("The standing of the account's loyality is: EXTREMELY GOOD");
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
                                         word = sc.next();
@@ -1121,7 +1204,7 @@ public class ATM {
 
                                         if (word.equalsIgnoreCase("remove")) {
                                             System.out.println("Please enter the amount you wish to remove from the account");
-                                            while(!sc.hasNextInt()) {
+                                            while (!sc.hasNextInt()) {
                                                 System.out.println("Please enter an INTEGER and not a string.");
                                                 sc.next();
                                             }
@@ -1136,7 +1219,8 @@ public class ATM {
                                             }
                                         }
                                         break;
-                                    case 4: System.out.println(".::You've selected all the accounts::.");
+                                    case 4:
+                                        System.out.println(".::You've selected all the accounts::.");
                                         System.out.println("The average standing of all account's loyality is: NORMAL");
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
                                         word = sc.next();
@@ -1161,7 +1245,7 @@ public class ATM {
 
                                         if (word.equalsIgnoreCase("remove")) {
                                             System.out.println("Please enter the amount you wish to remove from all the accounts");
-                                            while(!sc.hasNextInt()) {
+                                            while (!sc.hasNextInt()) {
                                                 System.out.println("Please enter an INTEGER and not a string.");
                                                 sc.next();
                                             }
@@ -1183,9 +1267,8 @@ public class ATM {
                                     default:
                                 }
 
-
-                                  default:
-                    }
+                            default:
+                        }
 
                     }
                     System.out.println("Goodbye.");
