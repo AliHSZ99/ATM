@@ -1266,10 +1266,8 @@ public class ATM {
 
                                     default:
                                 }
-
                             default:
                         }
-
                     }
                     System.out.println("Goodbye.");
                 }
