@@ -7,7 +7,7 @@ package atm;
 
 /**
  * A class that creates the accounts to run in the ATM client class. It also
- * provides nice output for user experience.
+ * provides a nice output for user experience.
  *
  * @author Vincent Benesen, Jeremie Guerchon, Ali Zoubeidi
  */
