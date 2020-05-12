@@ -17,15 +17,20 @@ import java.io.*;
 public class ATM {
 
     /**
+     * The main method
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException {
-        // TODO code application logic here
+        
+        // Instantiating objects from the Account class and AdminAccount class.
         Accounts vincent = new Accounts("Vincent", "Benesen", 5000);
         Accounts ali = new Accounts("Ali", "Zoubeidi", 8000);
         Accounts jeremie = new Accounts("Jeremie", "Guerchon", 4000);
         AdminAccount admin = new AdminAccount("admin", "password", 9999);
 
+        // Instantiating File class and Scanner class.
+        // Scanner reads from files.
         File ft = new File("users.txt");
         Scanner list = new Scanner(ft);
         File file = new File("machine.txt");
@@ -42,30 +47,35 @@ public class ATM {
         String h3 = hardware.nextLine();
         String h4 = hardware.nextLine();
 
+        // Initializing variables
         String newPass = " ";
-
         String garbage;
+        String answer100;
+        String answer50;
+        String password = null;
         int count100 = 0;
         int count50 = 0;
         int count20 = 0;
         int count10 = 0;
-        String answer100;
-        String answer50;
+        int amount;
         boolean want100 = false;
         boolean want50 = false;
 
+        // Instantiating DecimalFormat class for money formatting.
+        // Instantiating Scanner class for user input.
         DecimalFormat currency = new DecimalFormat("0.00$");
-        String password = null;
-        int amount;
         Scanner sc = new Scanner(System.in);
+        
+        // Outputs nice welcome message for the simulator.
         System.out.println("\n*******************************************");
         System.out.println("*------->>>WELCOME TO J.A.V BANK<<<-------*");
         System.out.println("*******************************************");
         System.out.print("\nPlease enter your username > ");
         String username = sc.next();
 
+        // Checking for login info
         while (!username.equals(vincent.getUserName()) && !username.equals(admin.getUser()) && !username.equals(ali.getUserName()) && !username.equals(jeremie.getUserName())) {
-            System.out.print("INVALID USERNAME, Please enter your username");
+            System.out.print("INVALID USERNAME, Please enter your username > ");
             username = sc.next();
         }
 
@@ -73,24 +83,27 @@ public class ATM {
             System.out.print("Please enter your password > ");
             password = sc.next();
             while (!password.equals(vincent.getPassWord())) {
-                System.out.print("Please enter your password >");
+                System.out.print("WRONG PASSWORD! Please enter your password again >");
                 password = sc.next();
             }
             if (username.equals(vincent.getUserName()) && password.equals(vincent.getPassWord())) {
                 System.out.println("\n" + vincent);
                 String response = "yes";
+         // This is where login is finished and prints out user choices
+         
                 while (response.equalsIgnoreCase("Yes")) {
 
-                    System.out.print("Please enter your choice > ");
-                    while (!sc.hasNextInt()) {
+                    System.out.print("Please enter your choice > ");    // Asks for user choice with
+                    while (!sc.hasNextInt()) {                          // Type-Safe input.
                         sc.next();
                         System.out.println("\n" + vincent);
                         System.out.print("Please enter your choice > ");
                     }
                     int number = sc.nextInt();
+                    
                     switch (number) {
                         case 1:
-                            System.out.print("Enter (yes) if you want to receive $100 bills depending on your amount > ");
+                            System.out.print("\nEnter (yes) if you want to receive $100 bills depending on your amount > ");
                             answer100 = sc.next().trim();
                             if (answer100.equalsIgnoreCase("yes")) {
                                 want100 = true;
@@ -202,12 +215,31 @@ public class ATM {
                             }
 
                             System.out.println("Here is your: " + currency.format(withdraw));
+//                            System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
+//                                        + "\n3..." + "\n2.." + "\n1.");
+//                                System.out.println(vincent.receipt() + "\nWITHDRAWAL FROM ACCOUNT:              " + currency.format(withdraw));
+//                                System.out.println("\nYou will receive the following:");
+//                                if (count100 >= 1) {
+//                                    System.out.println("  " + count100 + (count100 >= 2 ? " $100 bills" : " $100 bill"));
+//                                }
+//                                if (count50 >= 1) {
+//                                    System.out.println("  " + count50 + (count50 >= 2 ? " $50 bills" : " $50 bill"));
+//                                }
+//                                if (count20 >= 1) {
+//                                    System.out.println("  " + count20 + (count20 >= 2 ? " $20 bills" : " $20 bill"));
+//                                }
+//                                if (count10 >= 1) {
+//                                    System.out.println("  " + count10 + (count10 >= 2 ? " $10 bills" : " $10 bill"));
+//                                }
+//                                System.out.println("\n" + "\n" + "Available Balance:                   " + currency.format(balance));
+//                                System.out.println(vincent.bankStatement());
+//                                //System.out.println(vincent.options());
                             System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                             response = sc.next();
                             if (response.equalsIgnoreCase("Yes")) {
                                 response = "yes";
                                 System.out.println(vincent.options());
-                            } else if (response.equalsIgnoreCase("No")) {
+                            } else {
                                 response = "no";
                                 System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                         + "\n3..." + "\n2.." + "\n1.");
