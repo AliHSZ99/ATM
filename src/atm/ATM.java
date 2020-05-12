@@ -973,20 +973,20 @@ public class ATM {
                     }
                 }
             }
-        } else if (username.equals(admin.getUser())) {
+        } else if (username.equals(AdminAccount.getUser())) {
             System.out.println("\n[_[-=ADMINISTRATIVE ACCOUNT .JAV 2.0491=-]_]");
             System.out.println("Welcome back Jeremie~ please enter your password");
             newPass = sc.next();
-            while (!newPass.equals(admin.getPass())) {
+            while (!newPass.equals(AdminAccount.getPass())) {
                 System.out.println("WRONG PASSWORD ENTER AGAIN");
                 newPass = sc.next();
             }
-            if (username.equals(admin.getUser()) && newPass.equals(admin.getPass())) {
-                while (!newPass.equals(admin.getPass())) {
+            if (username.equals(AdminAccount.getUser()) && newPass.equals(AdminAccount.getPass())) {
+                while (!newPass.equals(AdminAccount.getPass())) {
                     System.out.println("WRONG PASSWORD ENTER AGAIN");
                     newPass = sc.next();
                 }
-                if (username.equals(admin.getUser()) && newPass.equals(admin.getPass())) {
+                if (username.equals(AdminAccount.getUser()) && newPass.equals(AdminAccount.getPass())) {
                     String answer = "Yes";
                     while (answer.equalsIgnoreCase("yes")) {
                         System.out.println(admin);
@@ -1011,9 +1011,182 @@ public class ATM {
                                 break;
                             case 3:
                                 System.out.println("Select an account to verify their loyality");
-                            default:
-                                System.out.println(admin);
-                        }
+                                System.out.println("Press 1 to enter Ali's account");
+                                System.out.println("press 2 to enter Jeremie's account");
+                                System.out.println("Press 3 to enter Vincent's account");
+                                System.out.println("Press 4 to deposit/remove from all accounts");
+                                while (!sc.hasNextInt()) {
+                                    System.out.println("Please enter a number and not a string");
+                                    sc.next();
+                                }
+                                int accounts = sc.nextInt();
+                                switch (accounts) {
+                                    case 1:
+                                        System.out.println(".::You've selected Ali's account::.");
+                                        System.out.println("The standing of the account's loyality is: GOOD");
+                                        System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        String word = sc.next();
+                                        if (word.equalsIgnoreCase("deposit")) {
+                                            System.out.println("Please enter the amount you wish to deposit to this account");
+                                            while (!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick1 = sc.nextInt();
+                                            System.out.println("You've added " + pick1 + "$ " + "to Ali's account");
+                                            System.out.println("New balance is: " + (pick1 + ali.getMoney()) + "$");
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+
+                                        if (word.equalsIgnoreCase("remove")) {
+                                            System.out.println("Please enter the amount you wish to remove from the account");
+                                            while(!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick2 = sc.nextInt();
+                                            System.out.println("You've removed " + pick2 + "$ " + "from Ali's account");
+                                            System.out.println("New balance is: " + (ali.getMoney() - pick2) + "$");
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+                                        break;
+                                    case 2: System.out.println(".::You've selected Jeremie's account::.");
+                                        System.out.println("The standing of the account's loyality is: BAD");
+                                        System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        word = sc.next();
+                                        if (word.equalsIgnoreCase("deposit")) {
+                                            System.out.println("Please enter the amount you wish to deposit to this account");
+                                            while (!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick1 = sc.nextInt();
+                                            System.out.println("You've added " + pick1 + "$ " + "to Jeremie's account");
+                                            System.out.println("New balance is: " + (pick1 + jeremie.getMoney()) + "$");
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+
+                                        if (word.equalsIgnoreCase("remove")) {
+                                            System.out.println("Please enter the amount you wish to remove from the account");
+                                            while(!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick2 = sc.nextInt();
+                                            System.out.println("You've removed " + pick2 + "$ " + "from Jeremie's account");
+                                            System.out.println("New balance is: " + (jeremie.getMoney() - pick2) + "$");
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+                                        break;
+                                    case 3: System.out.println(".::You've selected Vincent's account::.");
+                                        System.out.println("The standing of the account's loyality is: EXTREMELY GOOD");
+                                        System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        word = sc.next();
+                                        if (word.equalsIgnoreCase("deposit")) {
+                                            System.out.println("Please enter the amount you wish to deposit to this account");
+                                            while (!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick1 = sc.nextInt();
+                                            System.out.println("You've added " + pick1 + "$ " + "to Vincent's account");
+                                            System.out.println("New balance is: " + (pick1 + vincent.getMoney()) + "$");
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+
+                                        if (word.equalsIgnoreCase("remove")) {
+                                            System.out.println("Please enter the amount you wish to remove from the account");
+                                            while(!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick2 = sc.nextInt();
+                                            System.out.println("You've removed " + pick2 + "$ " + "from Vincent's account");
+                                            System.out.println("New balance is: " + (vincent.getMoney() - pick2) + "$");
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+                                        break;
+                                    case 4: System.out.println(".::You've selected all the accounts::.");
+                                        System.out.println("The average standing of all account's loyality is: NORMAL");
+                                        System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        word = sc.next();
+                                        if (word.equalsIgnoreCase("deposit")) {
+                                            System.out.println("Please enter the amount you wish to deposit to all the accounts");
+                                            while (!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick1 = sc.nextInt();
+                                            System.out.println("You've added " + pick1 + "$ " + "to all the accounts");
+                                            System.out.println("New balance for Jeremie is: " + (pick1 + jeremie.getMoney()) + "$");
+                                            System.out.println("New balance for Ali is: " + (pick1 + ali.getMoney()) + "$");
+                                            System.out.println("New balance for Vincent is  " + (pick1 + vincent.getMoney()) + "$");
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+
+                                        if (word.equalsIgnoreCase("remove")) {
+                                            System.out.println("Please enter the amount you wish to remove from all the accounts");
+                                            while(!sc.hasNextInt()) {
+                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                sc.next();
+                                            }
+                                            int pick2 = sc.nextInt();
+                                            System.out.println("You've removed " + pick2 + "$ " + "from all accounts");
+                                            System.out.println("New balance for Jeremie is: " + (jeremie.getMoney() - pick2) + "$");
+                                            System.out.println("New balance for Ali is: " + (ali.getMoney() - pick2) + "$");
+                                            System.out.println("New balance for Vincent is: " + (vincent.getMoney() - pick2) + "$");
+
+                                            System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            answer = sc.next();
+                                            while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
+                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                answer = sc.next();
+                                            }
+                                        }
+                                        break;
+
+                                    default:
+                                }
+
+
+                                  default:
+                    }
+
                     }
                     System.out.println("Goodbye.");
                 }

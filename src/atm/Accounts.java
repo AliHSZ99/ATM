@@ -63,6 +63,8 @@ public class Accounts {
         return "\n-------------------------------------------"
                 + "\n BANK FROM HOME, THE OFFICE, OR THE ROAD,"
                 + "\n     JAV.com MAKES BANKING EASIER!       "
+                + "\n          MESSAGE FROM J.A.V             "
+                + "\n           YOU'RE BEAUTIFUL!             "
                 + "\nVIEW ACCOUNT STATEMENTS & CHECK & PAY BILLS. "
                 + "\nSET THE ATM PREFERENCES. ACTIVATE PERSONALIZED "
                 + "\n        ALERTS-AT YOUR CONVENIENCE "
