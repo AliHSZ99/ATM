@@ -1342,7 +1342,7 @@ public class ATM {
                             default:
                         }
                     }
-                    System.out.println("Goodbye.");
+                    System.out.println("Goodbye.");  // GOODBYE output for admin account.
                 }
             }
         }
