@@ -123,7 +123,8 @@ public class Accounts {
                 + "\n****WELCOME TO YOUR BANK ACCOUNT****"
                 + "\nPlease choose for the following options "
                 + "\nPress (1) for Withdraw"
-                + "\nPress (2) for Deposit" + "\nPress (3) for Check Balance"
+                + "\nPress (2) for Deposit" 
+                + "\nPress (3) for Check Balance"
                 + "\nPress (4) for Transferring Money to other Account"
                 + "\nPress (5) for Currency conversion";
     }
