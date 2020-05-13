@@ -1363,7 +1363,6 @@ public class ATM {
                     }
                 }
             }
-
             // Here is the code for the Admin account
             // Note: Here there will be more comments because the code is a bit different
         } else if (username.equals(AdminAccount.getUser())) {
