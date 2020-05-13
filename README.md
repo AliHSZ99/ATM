@@ -14,8 +14,11 @@ do not have.
 # ID and PASSWORDS for All 3 Accounts and Admin Account
 
 Ali's Account:     USER ID -> Ali          PASSWORD -> Zoubeidi
+
 Vincent's Account: USER ID -> Vincent      PASSWORD -> Benesen
+
 Jeremie's Account: USER ID -> Jeremie      PASSWORD -> Guerchon
+
 Admin's Account:   USER ID -> admin        PASSWORD -> password
 
 # Authors
