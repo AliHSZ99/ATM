@@ -130,7 +130,7 @@ public class ATM {
                             int withdraw = amounts;
 
                             // Here we check if the amount wanted is higher than the user's balnce.
-                            while (amounts > vincent.getMoney()) { 
+                            while (amounts > vincent.getMoney()) {
                                 System.out.println("Sorry! insufficient balance");
                                 System.out.print("Please Enter a new amount > ");
                                 while (!sc.hasNextInt()) {
@@ -299,7 +299,7 @@ public class ATM {
                             // Checking if user wants to do something else.
                             if (response.equalsIgnoreCase("Yes")) {
                                 System.out.println(vincent.options());
-                            } else {   
+                            } else {
                                 System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                         + "\n3..." + "\n2.." + "\n1.");
                                 System.out.println(vincent.receipt() + "\nDEPOSIT TO ACCOUNT:              " + currency.format(deposit));
@@ -354,7 +354,7 @@ public class ATM {
                                 }
                                 int transferedMoney = sc.nextInt();
 
-                                while (transferedMoney > vincent.getMoney()) { 
+                                while (transferedMoney > vincent.getMoney()) {
                                     System.out.println("Insufficient Balance!");
                                     System.out.print("Please Enter a valid amount > ");
                                     transferedMoney = sc.nextInt();
@@ -393,7 +393,7 @@ public class ATM {
                                 }
                                 int transferedMoney = sc.nextInt();
 
-                                while (transferedMoney > vincent.getMoney()) { 
+                                while (transferedMoney > vincent.getMoney()) {
                                     System.out.println("Insufficient Balance!");
                                     System.out.print("Please Enter a valid amount > ");
                                     transferedMoney = sc.nextInt();
@@ -691,7 +691,7 @@ public class ATM {
 
                                 System.out.println(ali.options());
 
-                            } else {  
+                            } else {
                                 System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                         + "\n3..." + "\n2.." + "\n1.");
                                 System.out.println(ali.receipt() + "\nWITHDRAWAL FROM ACCOUNT:              " + currency.format(withdraw));
@@ -730,7 +730,7 @@ public class ATM {
                             // user response
                             if (response.equalsIgnoreCase("Yes")) {
                                 System.out.println(ali.options());
-                            } else {    
+                            } else {
                                 System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                         + "\n3..." + "\n2.." + "\n1.");
                                 System.out.println(ali.receipt() + "\nDEPOSIT TO ACCOUNT:              " + currency.format(deposit));
@@ -747,7 +747,7 @@ public class ATM {
 
                             if (response.equalsIgnoreCase("Yes")) {
                                 System.out.println(ali.options());
-                            } else {     
+                            } else {
                                 System.out.println("Thank You!");
                             }
                             break;
@@ -782,7 +782,7 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
-                                while (transferedMoney > ali.getMoney()) { 
+                                while (transferedMoney > ali.getMoney()) {
                                     System.out.println("Insufficient Balance!");
                                     System.out.print("Please Enter a valid amount > ");
                                     transferedMoney = sc.nextInt();
@@ -804,7 +804,7 @@ public class ATM {
                                     System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(ali.getMoney()));
                                     System.out.println(ali.bankStatement());
                                     System.out.println(ali.options());
-                                } else {  
+                                } else {
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                             + "\n3..." + "\n2.." + "\n1.");
                                     System.out.println(ali.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
@@ -819,8 +819,8 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
-                                
-                                while (transferedMoney > ali.getMoney()) { 
+
+                                while (transferedMoney > ali.getMoney()) {
                                     System.out.println("Insufficient Balance!");
                                     System.out.print("Please Enter a valid amount > ");
                                     transferedMoney = sc.nextInt();
@@ -842,7 +842,7 @@ public class ATM {
                                     System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(ali.getMoney()));
                                     System.out.println(ali.bankStatement());
                                     System.out.println(ali.options());
-                                } else {  
+                                } else {
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                             + "\n3..." + "\n2.." + "\n1.");
                                     System.out.println(ali.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
@@ -903,7 +903,7 @@ public class ATM {
 
                                     if (response.equalsIgnoreCase("Yes")) {
                                         System.out.println(ali.options());
-                                    } else { 
+                                    } else {
                                         for (int i = 0; i < 2; i++) {
                                             if (i == 0) {
                                                 System.out.println("Thank you!");
@@ -938,7 +938,7 @@ public class ATM {
                                     // user response
                                     if (response.equalsIgnoreCase("Yes")) {
                                         System.out.println(ali.options());
-                                    } else {  
+                                    } else {
                                         System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
@@ -950,6 +950,7 @@ public class ATM {
                     }
                 }
             }
+
             // Here is where Jeremie's account starts
             // Getting login info
         } else if (username.equals(jeremie.getUserName())) {
@@ -997,7 +998,7 @@ public class ATM {
                             int withdraw = amounts;
                             int balance = jeremie.getMoney() - amounts;
 
-                            while (amounts > jeremie.getMoney()) {    
+                            while (amounts > jeremie.getMoney()) {
                                 System.out.println("Sorry! insufficient balance");
                                 System.out.print("Please Enter a new amount >");
                                 while (!sc.hasNextInt()) {
@@ -1159,7 +1160,7 @@ public class ATM {
                             // user response
                             if (response.equalsIgnoreCase("Yes")) {
                                 System.out.println(jeremie.options());
-                            } else {  
+                            } else {
                                 System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                         + "\n3..." + "\n2.." + "\n1.");
                                 System.out.println(jeremie.receipt() + "\nDEPOSIT TO ACCOUNT:              " + currency.format(deposit));
@@ -1177,19 +1178,23 @@ public class ATM {
                             // user response
                             if (response.equalsIgnoreCase("Yes")) {
                                 System.out.println(jeremie.options());
-                            } else { 
+                            } else {
                                 System.out.println("Thank You!");
                             }
                             break;
                         // Transfering money to other accounts for this account
                         case 4:
+                            // Here is where the tramsfer block is executed.
                             System.out.println("\nPlease choose an account " + "\n(1) Vincent" + "\n(2) Ali");
                             int accountToTransfer = sc.nextInt();
+
                             while (accountToTransfer != 1 && accountToTransfer != 2) {
                                 System.out.println("Please choose from the following choices");
                                 System.out.println("(1) Vincent" + "\n(2) Ali");
+                                System.out.print("Choose here > ");
                                 accountToTransfer = sc.nextInt();
                             }
+                            // If user wants to transfer money to the 1st account option
                             if (accountToTransfer == 1) {
                                 System.out.print("\nPlease Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
@@ -1197,33 +1202,41 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
-                                
-                                while (transferedMoney > jeremie.getMoney()) { 
+
+                                while (transferedMoney > jeremie.getMoney()) {
                                     System.out.println("Insufficient Balance!");
                                     System.out.print("Please Enter a valid amount > ");
+                                    while (!sc.hasNextInt()) {
+                                        System.out.print("Integer please > ");
+                                        sc.next();
+                                    }
                                     transferedMoney = sc.nextInt();
                                 }
-                                
+
                                 vincent.setMoney(vincent.getMoney() + transferedMoney);
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Ali");
                                 jeremie.setMoney(jeremie.getMoney() - transferedMoney);
+
                                 System.out.println("Is there anything we can help you with? (YES) (NO)");
                                 response = sc.next();
-                                
+
+                                // user response
                                 if (response.equalsIgnoreCase("Yes")) {
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                             + "\n3..." + "\n2.." + "\n1.");
                                     System.out.println(jeremie.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
                                     System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(jeremie.getMoney()));
                                     System.out.println(jeremie.bankStatement());
+
                                     System.out.println(jeremie.options());
-                                } else if (response.equalsIgnoreCase("No")) {
+                                } else {
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                             + "\n3..." + "\n2.." + "\n1.");
                                     System.out.println(jeremie.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
                                     System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(jeremie.getMoney()));
                                     System.out.println(jeremie.bankStatement());
                                 }
+                                // If user wants to transfer to the second account option
                             } else if (accountToTransfer == 2) {
                                 System.out.print("\nPlease Enter the amount of money you want to transfer > ");
                                 while (!sc.hasNextInt()) {
@@ -1231,28 +1244,34 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
-                                
+
                                 while (transferedMoney > jeremie.getMoney()) {
                                     System.out.println("Insufficient Balance!");
                                     System.out.print("Please Enter a valid amount > ");
+                                    while (!sc.hasNextInt()) {
+                                        System.out.print("Integer please > ");
+                                        sc.next();
+                                    }
                                     transferedMoney = sc.nextInt();
                                 }
-                                
+
                                 ali.setMoney(ali.getMoney() + transferedMoney);
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Jeremie");
                                 jeremie.setMoney(jeremie.getMoney() - transferedMoney);
+
                                 System.out.println("Is there anything we can help you with? (YES) (NO)");
                                 response = sc.next();
+
+                                // user response
                                 if (response.equalsIgnoreCase("Yes")) {
-                                    response = "yes";
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                             + "\n3..." + "\n2.." + "\n1.");
                                     System.out.println(jeremie.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
                                     System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(jeremie.getMoney()));
                                     System.out.println(jeremie.bankStatement());
+
                                     System.out.println(jeremie.options());
-                                } else if (response.equalsIgnoreCase("No")) {
-                                    response = "no";
+                                } else {
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                             + "\n3..." + "\n2.." + "\n1.");
                                     System.out.println(jeremie.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
@@ -1261,6 +1280,7 @@ public class ATM {
                                 }
                             }
                             break;
+                        // Money conversion for this account
                         case 5:
                             System.out.println("\n----Money Conversion----");
                             System.out.println("PLease choose for the following options: ");
@@ -1269,20 +1289,27 @@ public class ATM {
                             System.out.print("\nPlease enter your choice > ");
                             while (!sc.hasNextInt()) {
                                 sc.next();
-                                System.out.println("PLease choose for the following options: ");
+                                System.out.println("Please choose for the following options: ");
                                 System.out.println("(1) Convert money to US Dollars");
                                 System.out.println("(2) Convert money to Euros");
                                 System.out.print("\nPlease enter your choice > ");
                             }
                             int choice = sc.nextInt();
+
                             while (choice != 1 && choice != 2) {
                                 System.out.println("PLease choose for the following options: ");
                                 System.out.println("(1) Convert money to US Dollars");
                                 System.out.println("(2) Convert money to Euros");
                                 System.out.print("\nPlease enter your choice > ");
+                                while (!sc.hasNextInt()) {
+                                    System.out.print("Valid entry please > ");
+                                    sc.next();
+                                }
                                 choice = sc.nextInt();
                             }
+                            // This switch case is for the user's choice of conversion
                             switch (choice) {
+                                // Convert from CAN to USD
                                 case 1:
                                     System.out.println("\n****Converting From Canadian To US Dollars****");
                                     System.out.println("Please enter the amount of money you want to convert > ");
@@ -1291,21 +1318,25 @@ public class ATM {
                                         System.out.print("Please enter a valid amount > ");
                                     }
                                     amount = sc.nextInt();
-                                    MoneyConversion USD = new MoneyConversion("cad", amount, "usd");
+
+                                    // Instantiatiating MoneyConversion class
+                                    MoneyConversion usd = new MoneyConversion("cad", amount, "usd");
+
                                     System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:    1 Canadian Dollar = 0.71 United States Dollar");
-                                    System.out.println("CONVERSION:                                             " + currency.format(USD.toUsd()));
+                                    System.out.println("CONVERSION:                                             " + currency.format(usd.toUsd()));
+
                                     System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
+
                                     if (response.equalsIgnoreCase("Yes")) {
-                                        response = "yes";
                                         System.out.println(jeremie.options());
-                                    } else if (response.equalsIgnoreCase("No")) {
-                                        response = "no";
+                                    } else {
                                         System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
+                                // Converting from CAN to EUR
                                 case 2:
                                     System.out.println("\n****Converting From Canadian To Euros****");
                                     System.out.print("Please enter the amount of money you want to convert > ");
@@ -1314,18 +1345,20 @@ public class ATM {
                                         System.out.print("Please enter a valid amount > ");
                                     }
                                     amount = sc.nextInt();
-                                    MoneyConversion EUR = new MoneyConversion("cad", amount, "usd");
+
+                                    MoneyConversion eur = new MoneyConversion("cad", amount, "usd");
                                     System.out.println("\n----Money Conversion----");
                                     System.out.println("AMOUNT:                                                 " + currency.format(amount));
                                     System.out.println("EXCHANGE RATE:                    1 Canadian Dollar = 0.65 Euro");
-                                    System.out.println("CONVERSION:                                             " + currency.format(EUR.toEur()));
+                                    System.out.println("CONVERSION:                                             " + currency.format(eur.toEur()));
+
                                     System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                                     response = sc.next();
+
+                                    // user esponse
                                     if (response.equalsIgnoreCase("Yes")) {
-                                        response = "yes";
                                         System.out.println(jeremie.options());
                                     } else if (response.equalsIgnoreCase("No")) {
-                                        response = "no";
                                         System.out.println("Thank you!" + "\nGoodBye!");
                                     }
                                     break;
@@ -1337,209 +1370,291 @@ public class ATM {
                     }
                 }
             }
+
+            // Here is the code for the Admin account
+            // Note: Here there will be more comments because the code is a bit different
         } else if (username.equals(AdminAccount.getUser())) {
+            // Checking login info here
             System.out.println("\n[_[-=ADMINISTRATIVE ACCOUNT .JAV 2.0491=-]_]");
             System.out.println("Welcome back Jeremie~ please enter your password");
+            System.out.print("                 ");
             newPass = sc.next();
             while (!newPass.equals(AdminAccount.getPass())) {
-                System.out.println("WRONG PASSWORD ENTER AGAIN");
+                System.out.print("WRONG PASSWORD ENTER AGAIN > ");
                 newPass = sc.next();
             }
             if (username.equals(AdminAccount.getUser()) && newPass.equals(AdminAccount.getPass())) {
                 while (!newPass.equals(AdminAccount.getPass())) {
-                    System.out.println("WRONG PASSWORD ENTER AGAIN");
+                    System.out.print("WRONG PASSWORD ENTER AGAIN > ");
                     newPass = sc.next();
                 }
                 if (username.equals(AdminAccount.getUser()) && newPass.equals(AdminAccount.getPass())) {
                     String answer = "Yes";
+                    // Here is where the login info ends and where we print the admin options
+
+                    // Prompt admin for option
                     while (answer.equalsIgnoreCase("yes")) {
                         System.out.println(admin);
-                        System.out.println("Those are your account's selection permissions, select >>");
+                        System.out.print("Those are your account's selection permissions, select >> ");
+                        while (!sc.hasNextInt()) {
+                            System.out.print("Select a valid option Admin >> ");
+                            sc.next();
+                        }
                         int number = sc.nextInt();
+
+                        // switch case depending on the admin's choice.
                         switch (number) {
+                            // Info of all the user accounts are here in case 1.
                             case 1:
                                 System.out.println("\n.::Here are the following accounts::.");
                                 System.out.println(userOne);
                                 System.out.println(userTwo);
                                 System.out.println(userThree);
                                 System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                System.out.print("                                     ");
                                 answer = sc.next();
                                 break;
+                            // case 2 is for hardware information of the ATM machine
                             case 2:
                                 System.out.println(h1);
                                 System.out.println(h2);
                                 System.out.println(h3);
                                 System.out.println(h4);
                                 System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                System.out.print("                                     ");
                                 answer = sc.next();
                                 break;
+                            // case 3 is for user loyalty
                             case 3:
-                                System.out.println("Select an account to verify their loyality");
+                                System.out.println("\nSelect an account to verify their loyality:");
                                 System.out.println("Press 1 to enter Ali's account");
                                 System.out.println("press 2 to enter Jeremie's account");
                                 System.out.println("Press 3 to enter Vincent's account");
                                 System.out.println("Press 4 to deposit/remove from all accounts");
+                                System.out.print("Choose option here Admin > ");
                                 while (!sc.hasNextInt()) {
-                                    System.out.println("Please enter a number and not a string");
+                                    System.out.print("Please enter a number and not a string > ");
                                     sc.next();
                                 }
                                 int accounts = sc.nextInt();
+                                
+                                // This switch case is for the loyalty choice case above.
                                 switch (accounts) {
+                                    // Ali's account
                                     case 1:
-                                        System.out.println(".::You've selected Ali's account::.");
+                                        System.out.println("\n.::You've selected Ali's account::.");
                                         System.out.println("The standing of the account's loyality is: GOOD");
+
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        System.out.print("                             ");
                                         String word = sc.next();
+
+                                        // for when response is deposit
                                         if (word.equalsIgnoreCase("deposit")) {
-                                            System.out.println("Please enter the amount you wish to deposit to this account");
+                                            System.out.print("\nPlease enter the amount you wish to deposit to this account > ");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
-                                            System.out.println("You've added " + pick1 + "$ " + "to Ali's account");
+
+                                            System.out.println("\nYou've added " + pick1 + "$ " + "to Ali's account");
                                             System.out.println("New balance is: " + (pick1 + ali.getMoney()) + "$");
+
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
-                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                System.out.print("You've entered something else than yes or no, please enter either one > ");
                                                 answer = sc.next();
                                             }
                                         }
 
+                                        // For when response is remove
                                         if (word.equalsIgnoreCase("remove")) {
-                                            System.out.println("Please enter the amount you wish to remove from the account");
+                                            System.out.print("\nPlease enter the amount you wish to remove from the account > ");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
-                                            System.out.println("You've removed " + pick2 + "$ " + "from Ali's account");
+
+                                            System.out.println("\nYou've removed " + pick2 + "$ " + "from Ali's account");
                                             System.out.println("New balance is: " + (ali.getMoney() - pick2) + "$");
+
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
-                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                System.out.print("You've entered something else than yes or no, please enter either one > ");
                                                 answer = sc.next();
                                             }
                                         }
                                         break;
+                                    // Loyalty for jeremie's account
                                     case 2:
-                                        System.out.println(".::You've selected Jeremie's account::.");
+                                        System.out.println("\n.::You've selected Jeremie's account::.");
                                         System.out.println("The standing of the account's loyality is: BAD");
+
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        System.out.print("                             ");
                                         word = sc.next();
+
+                                        // user response
                                         if (word.equalsIgnoreCase("deposit")) {
-                                            System.out.println("Please enter the amount you wish to deposit to this account");
+                                            System.out.println("\nPlease enter the amount you wish to deposit to this account");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
-                                            System.out.println("You've added " + pick1 + "$ " + "to Jeremie's account");
+
+                                            System.out.println("\nYou've added " + pick1 + "$ " + "to Jeremie's account");
                                             System.out.println("New balance is: " + (pick1 + jeremie.getMoney()) + "$");
+
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
+                                            // Checking if admin did not enter yes or no
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
-                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                System.out.print("You've entered something else than yes or no, please enter either one > ");
                                                 answer = sc.next();
                                             }
                                         }
 
+                                        // If admin entered remove
                                         if (word.equalsIgnoreCase("remove")) {
-                                            System.out.println("Please enter the amount you wish to remove from the account");
+                                            System.out.print("\nPlease enter the amount you wish to remove from the account > ");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
-                                            System.out.println("You've removed " + pick2 + "$ " + "from Jeremie's account");
+
+                                            System.out.println("\nYou've removed " + pick2 + "$ " + "from Jeremie's account");
                                             System.out.println("New balance is: " + (jeremie.getMoney() - pick2) + "$");
+
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
+                                            // Checking if admin did not enter yes or no
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
-                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                System.out.print("You've entered something else than yes or no, please enter either one > ");
                                                 answer = sc.next();
                                             }
                                         }
                                         break;
+                                    // Loyalty for Vincent's account
                                     case 3:
-                                        System.out.println(".::You've selected Vincent's account::.");
+                                        System.out.println("\n.::You've selected Vincent's account::.");
                                         System.out.println("The standing of the account's loyality is: EXTREMELY GOOD");
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        System.out.print("                             ");
                                         word = sc.next();
+
+                                        // If admin enters deposit
                                         if (word.equalsIgnoreCase("deposit")) {
-                                            System.out.println("Please enter the amount you wish to deposit to this account");
+                                            System.out.print("\nPlease enter the amount you wish to deposit to this account > ");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
+
                                             System.out.println("You've added " + pick1 + "$ " + "to Vincent's account");
                                             System.out.println("New balance is: " + (pick1 + vincent.getMoney()) + "$");
+
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
+                                            // Checks if admin did not enter yes or no
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
-                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                System.out.print("You've entered something else than yes or no, please enter either one > ");
                                                 answer = sc.next();
                                             }
                                         }
 
+                                        // For when admin enters remove
                                         if (word.equalsIgnoreCase("remove")) {
-                                            System.out.println("Please enter the amount you wish to remove from the account");
+                                            System.out.print("\nPlease enter the amount you wish to remove from the account > ");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
+
                                             System.out.println("You've removed " + pick2 + "$ " + "from Vincent's account");
                                             System.out.println("New balance is: " + (vincent.getMoney() - pick2) + "$");
+
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
+                                            // Checks if admin did not enter yes or no
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
                                                 System.out.println("You've entered something else than yes or no, please enter either one.");
                                                 answer = sc.next();
                                             }
                                         }
                                         break;
+                                    // Loyalty of all the accounts at the same time
                                     case 4:
                                         System.out.println(".::You've selected all the accounts::.");
                                         System.out.println("The average standing of all account's loyality is: NORMAL");
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
                                         word = sc.next();
+
+                                        // For when admin types deposit
                                         if (word.equalsIgnoreCase("deposit")) {
-                                            System.out.println("Please enter the amount you wish to deposit to all the accounts");
+                                            System.out.print("Please enter the amount you wish to deposit to all the accounts > ");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
+
+                                            // All the new balances
                                             System.out.println("You've added " + pick1 + "$ " + "to all the accounts");
                                             System.out.println("New balance for Jeremie is: " + (pick1 + jeremie.getMoney()) + "$");
                                             System.out.println("New balance for Ali is: " + (pick1 + ali.getMoney()) + "$");
                                             System.out.println("New balance for Vincent is  " + (pick1 + vincent.getMoney()) + "$");
+
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
+                                            // Checks if admin did not enter yes or no.
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
-                                                System.out.println("You've entered something else than yes or no, please enter either one.");
+                                                System.out.print("You've entered something else than yes or no, please enter either one > ");
                                                 answer = sc.next();
                                             }
                                         }
 
+                                        // Checks if admin entered remove
                                         if (word.equalsIgnoreCase("remove")) {
-                                            System.out.println("Please enter the amount you wish to remove from all the accounts");
+                                            System.out.print("Please enter the amount you wish to remove from all the accounts > ");
                                             while (!sc.hasNextInt()) {
-                                                System.out.println("Please enter an INTEGER and not a string.");
+                                                System.out.print("Please enter an INTEGER and not a string > ");
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
+
+                                            // new balance of all accounts output
                                             System.out.println("You've removed " + pick2 + "$ " + "from all accounts");
                                             System.out.println("New balance for Jeremie is: " + (jeremie.getMoney() - pick2) + "$");
                                             System.out.println("New balance for Ali is: " + (ali.getMoney() - pick2) + "$");
                                             System.out.println("New balance for Vincent is: " + (vincent.getMoney() - pick2) + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
+                                            System.out.print("                                     ");
                                             answer = sc.next();
+
+                                            // Checks if admin did not type yes or no
                                             while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")) {
                                                 System.out.println("You've entered something else than yes or no, please enter either one.");
                                                 answer = sc.next();
@@ -1552,9 +1667,10 @@ public class ATM {
                             default:
                         }
                     }
+                    // GOODBYE output for admin account.
                     for (int i = 0; i < 2; i++) {
                         if (i == 0) {
-                            System.out.println("Goodbye.");  // GOODBYE output for admin account. 
+                            System.out.println("Goodbye.");
                         }
                         if (i == 1) {
                             System.out.println("Come back soon Admin Jeremie!");
