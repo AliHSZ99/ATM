@@ -43,6 +43,6 @@ receive on their receipt when they decide to withdraw.
 </pre>
 # Location of Repository
 <pre>
-<link>https://github.com/AliHSZ99/ATM</link>
+https://github.com/AliHSZ99/ATM
 </pre>                 
                  
