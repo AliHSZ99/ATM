@@ -1603,9 +1603,10 @@ public class ATM {
                                         break;
                                     // Loyalty of all the accounts at the same time
                                     case 4:
-                                        System.out.println(".::You've selected all the accounts::.");
+                                        System.out.println("\n.::You've selected all the accounts::.");
                                         System.out.println("The average standing of all account's loyality is: NORMAL");
                                         System.out.println("\nWhat do you wish to do: DEPOSIT | REMOVE");
+                                        System.out.print("                            ");
                                         word = sc.next();
 
                                         // For when admin types deposit
