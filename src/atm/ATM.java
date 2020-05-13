@@ -31,15 +31,8 @@ public class ATM {
 
         // Instantiating File class and Scanner class.
         // Scanner reads from files.
-        File ft = new File("users.txt");
-        Scanner list = new Scanner(ft);
         File file = new File("machine.txt");
         Scanner hardware = new Scanner(file);
-
-        //Here are the sets of accounts
-        String userOne = list.nextLine();
-        String userTwo = list.nextLine();
-        String userThree = list.nextLine();
 
         //Here are the sets of hardware info
         String h1 = hardware.nextLine();
@@ -1407,9 +1400,9 @@ public class ATM {
                             // Info of all the user accounts are here in case 1.
                             case 1:
                                 System.out.println("\n.::Here are the following accounts::.");
-                                System.out.println(userOne);
-                                System.out.println(userTwo);
-                                System.out.println(userThree);
+                                System.out.println("Ali Zoubeidi BAL: " + ali.getMoney() + "$");
+                                System.out.println("Vincent Benesen BAL: " + vincent.getMoney() + "$");
+                                System.out.println("Jeremie Guerchon BAL: " + jeremie.getMoney() + "$");
                                 System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                 System.out.print("                                     ");
                                 answer = sc.next();
@@ -1457,9 +1450,10 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
+                                            ali.setMoney(ali.getMoney() + pick1);
 
                                             System.out.println("\nYou've added " + pick1 + "$ " + "to Ali's account");
-                                            System.out.println("New balance is: " + (pick1 + ali.getMoney()) + "$");
+                                            System.out.println("New balance is: " + ali.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1479,9 +1473,10 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
+                                            ali.setMoney(ali.getMoney() - pick2);
 
                                             System.out.println("\nYou've removed " + pick2 + "$ " + "from Ali's account");
-                                            System.out.println("New balance is: " + (ali.getMoney() - pick2) + "$");
+                                            System.out.println("New balance is: " + ali.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1510,9 +1505,10 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
+                                            jeremie.setMoney(jeremie.getMoney() + pick1);
 
                                             System.out.println("\nYou've added " + pick1 + "$ " + "to Jeremie's account");
-                                            System.out.println("New balance is: " + (pick1 + jeremie.getMoney()) + "$");
+                                            System.out.println("New balance is: " +  jeremie.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1533,9 +1529,10 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
+                                            jeremie.setMoney(jeremie.getMoney() - pick2);
 
                                             System.out.println("\nYou've removed " + pick2 + "$ " + "from Jeremie's account");
-                                            System.out.println("New balance is: " + (jeremie.getMoney() - pick2) + "$");
+                                            System.out.println("New balance is: " + jeremie.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1564,9 +1561,10 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
+                                            vincent.setMoney(vincent.getMoney() + pick1);
 
                                             System.out.println("You've added " + pick1 + "$ " + "to Vincent's account");
-                                            System.out.println("New balance is: " + (pick1 + vincent.getMoney()) + "$");
+                                            System.out.println("New balance is: " + vincent.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1587,9 +1585,10 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
+                                            vincent.setMoney(vincent.getMoney() - pick2);
 
                                             System.out.println("You've removed " + pick2 + "$ " + "from Vincent's account");
-                                            System.out.println("New balance is: " + (vincent.getMoney() - pick2) + "$");
+                                            System.out.println("New balance is: " + vincent.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1617,12 +1616,15 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick1 = sc.nextInt();
+                                            ali.setMoney(ali.getMoney() + pick1);
+                                            jeremie.setMoney(jeremie.getMoney() + pick1);
+                                            vincent.setMoney(vincent.getMoney() + pick1);
 
                                             // All the new balances
                                             System.out.println("You've added " + pick1 + "$ " + "to all the accounts");
-                                            System.out.println("New balance for Jeremie is: " + (pick1 + jeremie.getMoney()) + "$");
-                                            System.out.println("New balance for Ali is: " + (pick1 + ali.getMoney()) + "$");
-                                            System.out.println("New balance for Vincent is  " + (pick1 + vincent.getMoney()) + "$");
+                                            System.out.println("New balance for Jeremie is: " + jeremie.getMoney() + "$");
+                                            System.out.println("New balance for Ali is: " + ali.getMoney() + "$");
+                                            System.out.println("New balance for Vincent is  " + vincent.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1643,12 +1645,16 @@ public class ATM {
                                                 sc.next();
                                             }
                                             int pick2 = sc.nextInt();
+                                            ali.setMoney(ali.getMoney() - pick2);
+                                            vincent.setMoney(vincent.getMoney() - pick2);
+                                            jeremie.setMoney(jeremie.getMoney() - pick2);
+
 
                                             // new balance of all accounts output
                                             System.out.println("You've removed " + pick2 + "$ " + "from all accounts");
-                                            System.out.println("New balance for Jeremie is: " + (jeremie.getMoney() - pick2) + "$");
-                                            System.out.println("New balance for Ali is: " + (ali.getMoney() - pick2) + "$");
-                                            System.out.println("New balance for Vincent is: " + (vincent.getMoney() - pick2) + "$");
+                                            System.out.println("New balance for Jeremie is: " + jeremie.getMoney() + "$");
+                                            System.out.println("New balance for Ali is: " + ali.getMoney() + "$");
+                                            System.out.println("New balance for Vincent is: " + vincent.getMoney() + "$");
 
                                             System.out.println("\n.::Enter yes or no respectively to either go back or terminate this session::.");
                                             System.out.print("                                     ");
@@ -1661,7 +1667,6 @@ public class ATM {
                                             }
                                         }
                                         break;
-
                                     default:
                                 }
                             default:
