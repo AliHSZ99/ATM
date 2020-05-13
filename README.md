@@ -30,9 +30,9 @@ Vincent Benesen: Is responsible of writing the Accounts service class
                  and is a contributor to the ATM main program.
                  
 Ali Zoubeidi: Is responsible of MoneyConversion service class, the challenge
-              problem(mentioned below in ReadMe) , fixing code, 
-              adding most of the javadoc comments and normal comments, and
-                is a contributor to the ATM main program.
+              problem(mentioned below in ReadMe) , fixing code, adding 
+              most of the javadoc comments and normal comments, and
+              is a contributor to the ATM main program.
               
 # Challenge Problem 
 
