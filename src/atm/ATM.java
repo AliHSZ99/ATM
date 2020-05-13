@@ -128,10 +128,9 @@ public class ATM {
                             // Here we get the balance of Vincent when subtracting from the amount wanted to withdraw.
                             int balance = vincent.getMoney() - amounts;
                             int withdraw = amounts;
-                            vincent.setMoney(balance);  // This line is important for keeping up with user's balance                           
 
                             // Here we check if the amount wanted is higher than the user's balnce.
-                            while (amounts > vincent.getMoney()) {  // HUGE ERRROR NEED TO FIX ASAP!!!!!!!!!
+                            while (amounts > vincent.getMoney()) { 
                                 System.out.println("Sorry! insufficient balance");
                                 System.out.print("Please Enter a new amount > ");
                                 while (!sc.hasNextInt()) {
@@ -143,6 +142,8 @@ public class ATM {
                                 withdraw = amounts;
                                 balance = vincent.getMoney() - amounts;
                             }
+
+                            vincent.setMoney(balance);  // This line is important for keeping up with user's balance                           
 
                             while (amounts < 10) {
                                 System.out.print("Valid entry please, we do not accept less than $10 bills > ");
@@ -362,9 +363,12 @@ public class ATM {
                                 }
                                 int transferedMoney = sc.nextInt();
 
-                                //while (transferedMoney > vincent.getMoney) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
-                                //     
-                                // }
+                                while (transferedMoney > vincent.getMoney()) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
+                                    System.out.println("Insufficient Balance!");
+                                    System.out.print("Please Enter a valid amount > ");
+                                    transferedMoney = sc.nextInt();
+                                }
+
                                 ali.setMoney(ali.getMoney() + transferedMoney);
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Ali");
                                 vincent.setMoney(vincent.getMoney() - transferedMoney);
@@ -374,6 +378,11 @@ public class ATM {
 
                                 if (response.equalsIgnoreCase("Yes")) {
                                     response = "yes";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
+                                            + "\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(vincent.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
+                                    System.out.println(vincent.bankStatement());
                                     System.out.println(vincent.options());
                                 } else if (response.equalsIgnoreCase("No")) {
                                     response = "no";
@@ -395,9 +404,12 @@ public class ATM {
                                 }
                                 int transferedMoney = sc.nextInt();
 
-                                //while (transferedMoney > vincent.getMoney) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
-                                //     
-                                // }
+                                while (transferedMoney > vincent.getMoney()) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
+                                    System.out.println("Insufficient Balance!");
+                                    System.out.print("Please Enter a valid amount > ");
+                                    transferedMoney = sc.nextInt();
+                                }
+
                                 jeremie.setMoney(vincent.getMoney() + transferedMoney);
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Jeremie");
                                 vincent.setMoney(vincent.getMoney() - transferedMoney);
@@ -405,6 +417,11 @@ public class ATM {
                                 response = sc.next();
                                 if (response.equalsIgnoreCase("Yes")) {
                                     response = "yes";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
+                                            + "\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(vincent.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
+                                    System.out.println(vincent.bankStatement());
                                     System.out.println(vincent.options());
                                 } else if (response.equalsIgnoreCase("No")) {
                                     response = "no";
@@ -563,7 +580,6 @@ public class ATM {
                             int amounts = sc.nextInt();
                             int withdraw = amounts;
                             int balance = ali.getMoney() - amounts;
-                            ali.setMoney(balance);
 
                             while (amounts > ali.getMoney()) {
                                 System.out.println("Sorry! insufficient balance");
@@ -576,7 +592,10 @@ public class ATM {
 
                                 withdraw = amounts;
                                 balance = ali.getMoney() - amounts;
+
                             }
+
+                            ali.setMoney(balance);
 
                             while (amounts < 10) {
                                 System.out.print("Valid entry please, we do not accept less than $10 bills > ");
@@ -784,6 +803,11 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
+                                while (transferedMoney > ali.getMoney()) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
+                                    System.out.println("Insufficient Balance!");
+                                    System.out.print("Please Enter a valid amount > ");
+                                    transferedMoney = sc.nextInt();
+                                }
 
                                 vincent.setMoney(vincent.getMoney() + transferedMoney);
 
@@ -796,6 +820,11 @@ public class ATM {
                                 // user response
                                 if (response.equalsIgnoreCase("Yes")) {
                                     response = "yes";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
+                                            + "\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(ali.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(ali.getMoney()));
+                                    System.out.println(ali.bankStatement());
                                     System.out.println(ali.options());
                                 } else {  // REMOVED THIS!!! -> (response.equalsIgnoreCase("No"))
                                     // USELESS ???? //response = "no";
@@ -813,6 +842,12 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
+                                
+                                while (transferedMoney > ali.getMoney()) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
+                                    System.out.println("Insufficient Balance!");
+                                    System.out.print("Please Enter a valid amount > ");
+                                    transferedMoney = sc.nextInt();
+                                }
 
                                 jeremie.setMoney(ali.getMoney() + transferedMoney);
 
@@ -825,13 +860,18 @@ public class ATM {
                                 // user response
                                 if (response.equalsIgnoreCase("Yes")) {
                                     response = "yes";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
+                                            + "\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(ali.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(ali.getMoney()));
+                                    System.out.println(ali.bankStatement());
                                     System.out.println(ali.options());
                                 } else {  // REMOVED THIS!!! -> (response.equalsIgnoreCase("No"))
                                     // USELESS??? -> //response = "no";
                                     System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
                                             + "\n3..." + "\n2.." + "\n1.");
                                     System.out.println(ali.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
-                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(vincent.getMoney()));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(ali.getMoney()));
                                     System.out.println(ali.bankStatement());
                                 }
                             }
@@ -990,9 +1030,8 @@ public class ATM {
                             int amounts = sc.nextInt();
                             int withdraw = amounts;
                             int balance = jeremie.getMoney() - amounts;
-                            jeremie.setMoney(balance);
 
-                            while (amounts > jeremie.getMoney()) {     // THIS DOESNT WORK IF WE WANT TO WITHDRAW AGAIN!!!!!!!
+                            while (amounts > jeremie.getMoney()) {    
                                 System.out.println("Sorry! insufficient balance");
                                 System.out.print("Please Enter a new amount >");
                                 while (!sc.hasNextInt()) {
@@ -1003,7 +1042,10 @@ public class ATM {
 
                                 withdraw = amounts;
                                 balance = jeremie.getMoney() - amounts;
+
                             }
+
+                            jeremie.setMoney(balance);
 
                             while (amounts < 10) {
                                 System.out.print("Valid entry please, we do not accept less than $10 bills > ");
@@ -1144,13 +1186,13 @@ public class ATM {
                                 System.out.print("Please enter a valid amount > ");
                             }
                             int deposit = sc.nextInt();
-                            
+
                             jeremie.setMoney((deposit + jeremie.getMoney()));
                             System.out.println("Deposit to Account: " + currency.format(deposit));
-                            
+
                             System.out.println("\nIs there anything we can help you with? (YES) (NO)");
                             response = sc.next();
-                            
+
                             // user response
                             if (response.equalsIgnoreCase("Yes")) {
                                 response = "yes";
@@ -1167,10 +1209,10 @@ public class ATM {
                         // Check Balance for this account
                         case 3:
                             System.out.println("\nYour Current Balance is: " + currency.format(jeremie.getMoney()));
-                            
+
                             System.out.println("Is there anything we can help you with? (YES) (NO)");
                             response = sc.next();
-                            
+
                             // user response
                             if (response.equalsIgnoreCase("Yes")) {
                                 // USLESSS ??? -> response = "yes";
@@ -1195,6 +1237,13 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
+                                
+                                while (transferedMoney > jeremie.getMoney()) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
+                                    System.out.println("Insufficient Balance!");
+                                    System.out.print("Please Enter a valid amount > ");
+                                    transferedMoney = sc.nextInt();
+                                }
+                                
                                 vincent.setMoney(vincent.getMoney() + transferedMoney);
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Ali");
                                 jeremie.setMoney(jeremie.getMoney() - transferedMoney);
@@ -1202,6 +1251,11 @@ public class ATM {
                                 response = sc.next();
                                 if (response.equalsIgnoreCase("Yes")) {
                                     response = "yes";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
+                                            + "\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(jeremie.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(jeremie.getMoney()));
+                                    System.out.println(jeremie.bankStatement());
                                     System.out.println(jeremie.options());
                                 } else if (response.equalsIgnoreCase("No")) {
                                     response = "no";
@@ -1218,6 +1272,13 @@ public class ATM {
                                     System.out.print("Please Enter a valid amount > ");
                                 }
                                 int transferedMoney = sc.nextInt();
+                                
+                                while (transferedMoney > jeremie.getMoney()) { // WANT TO ADD CODE HERE BUT WOULD BE ERROR LIKE THE WHILE ABOVE!!!!
+                                    System.out.println("Insufficient Balance!");
+                                    System.out.print("Please Enter a valid amount > ");
+                                    transferedMoney = sc.nextInt();
+                                }
+                                
                                 ali.setMoney(ali.getMoney() + transferedMoney);
                                 System.out.println("You've transferred " + currency.format(transferedMoney) + " to Jeremie");
                                 jeremie.setMoney(jeremie.getMoney() - transferedMoney);
@@ -1225,6 +1286,11 @@ public class ATM {
                                 response = sc.next();
                                 if (response.equalsIgnoreCase("Yes")) {
                                     response = "yes";
+                                    System.out.println("\nPRINTING YOUR RECEIPT ..." + "\n5....." + "\n4...."
+                                            + "\n3..." + "\n2.." + "\n1.");
+                                    System.out.println(jeremie.receipt() + "\nTRANSFERED MONEY:                 " + currency.format(transferedMoney));
+                                    System.out.println("\n" + "\n" + "Total Balance:                   " + currency.format(jeremie.getMoney()));
+                                    System.out.println(jeremie.bankStatement());
                                     System.out.println(jeremie.options());
                                 } else if (response.equalsIgnoreCase("No")) {
                                     response = "no";
